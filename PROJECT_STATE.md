@@ -110,6 +110,11 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
     - The main button reads "Ask for a custom gift" and opens WhatsApp.
     - The photo is dimmed, with a large tilted "Coming soon" stitched ribbon across it.
 
+  - The Gifts block on the home page now uses a drawn gift illustration, `assets/photos/gifts-coming-soon.svg`, instead of the wedding photo.
+    - It is an SVG of a wrapped box with a gold bow, a "For you" tag, a small hoop and flowers.
+    - A real stock photo couldn't be downloaded because the workspace blocks image sites. The user can attach one to swap in.
+    - The "Coming soon" ribbon moved to the top-left corner so the gift stays visible.
+
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
 - Mulberry family: mist `#f3e6ec`, rose silk `#e2bccb`, dusty rose `#c4879d`, mulberry `#6e1f45`, damson `#3f0f29`.
