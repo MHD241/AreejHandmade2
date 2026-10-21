@@ -95,6 +95,26 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
     - The preview copies only load Font Awesome's JS build from cdnjs instead of its CSS, so all icons show there.
     - The real site still uses the Font Awesome CSS for the other icons.
 
+- Phase 10: placeholder products removed (2026-10-21; branch `remove-placeholder-products`, not pushed yet, preview version 11).
+  - **Deleted 22 products** that only had placeholders: h8, h11, h12, h14, h16, h18, h19, h21, h22, h24, k1, k4, k5, p1, p3, p4, p5, g1–g5.
+    - Removed from the data in index.html, their pages in `products/`, the nav dropdown links on every page, and the related cards.
+  - **17 products remain:** 14 hoops, keyrings k2 and k3, and Palestinian p2. p2 now uses its restored real photo, `assets/products/palestinian-accessory-bundle.png`.
+  - **Gifts collection:** the user chose to keep it as "coming soon". `renderProducts()` shows a coming-soon panel when a collection is empty, with "Ask for a custom gift" (WhatsApp) and "Shop hoops". The nav dropdown item reads "Gift sets coming soon".
+  - **Counts and data:** the hoop count changed from 24 to 14. Product pages' PRODUCT data (img/images) now points at real photos.
+  - `assets/placeholders/` was deleted because nothing uses it any more.
+  - **Bug fixed:** the hoop filter buttons were showing on every collection. They now show on Hoops only.
+
+  - Home Gifts block is now clearly "coming soon" (preview version 12):
+    - A saffron "Coming soon" pill with a pulsing dot above the title.
+    - The subtitle reads "Gift sets are on the way." with a note offering gift wrap or a custom gift.
+    - The main button reads "Ask for a custom gift" and opens WhatsApp.
+    - The photo is dimmed, with a large tilted "Coming soon" stitched ribbon across it.
+
+  - The Gifts block on the home page now uses a drawn gift illustration, `assets/photos/gifts-coming-soon.svg`, instead of the wedding photo.
+    - It is an SVG of a wrapped box with a gold bow, a "For you" tag, a small hoop and flowers.
+    - A real stock photo couldn't be downloaded because the workspace blocks image sites. The user can attach one to swap in.
+    - The "Coming soon" ribbon moved to the top-left corner so the gift stays visible.
+
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
 - Mulberry family: mist `#f3e6ec`, rose silk `#e2bccb`, dusty rose `#c4879d`, mulberry `#6e1f45`, damson `#3f0f29`.
