@@ -95,7 +95,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
     - The preview copies only load Font Awesome's JS build from cdnjs instead of its CSS, so all icons show there.
     - The real site still uses the Font Awesome CSS for the other icons.
 
-- Phase 10: placeholder products removed (2026-10-21; branch `remove-placeholder-products`, not pushed yet, preview version 11).
+- Phase 10: placeholder products removed (2026-10-21; merged to `main` via PR #2 on 2026-10-21, merge commit `ffaf310`).
   - **Deleted 22 products** that only had placeholders: h8, h11, h12, h14, h16, h18, h19, h21, h22, h24, k1, k4, k5, p1, p3, p4, p5, g1–g5.
     - Removed from the data in index.html, their pages in `products/`, the nav dropdown links on every page, and the related cards.
   - **17 products remain:** 14 hoops, keyrings k2 and k3, and Palestinian p2. p2 now uses its restored real photo, `assets/products/palestinian-accessory-bundle.png`.
