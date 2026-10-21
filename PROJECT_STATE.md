@@ -109,6 +109,6 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - Some copy reads as internal ("Every piece you sent. Now part of the site.").
 
 ## Next step
-- **Pushed 2026-10-21:** branch `redesign-mulberry-gold`, commit `4e7f7c3`, pull request https://github.com/MHD241/AreejHandmade2/pull/1. Not yet merged into `main`.
-- Next: the user merges PR #1, or asks Claude to merge it, to publish the redesign live.
+- **Pushed 2026-10-21:** branch `redesign-mulberry-gold`, commit `4e7f7c3`, pull request https://github.com/MHD241/AreejHandmade2/pull/1. **Merged into `main` on 2026-10-21 (merge commit `fccaba7`).**
+- Next steps: add photos for the 23 placeholder products; optionally delete the unused CSS files.
 - Before committing, the original `assets/gallery` and `assets/products` photos were restored, so the repository keeps the real files. Only `palestinian-accessory-bundle.png` (product p2) is still used.
