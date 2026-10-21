@@ -18,3 +18,21 @@ body:before{position:fixed;inset:0;z-index:-1;content:"";opacity:.15;pointer-eve
 @keyframes archiveFloat{50%{transform:translateY(-12px)}}@keyframes archivePulse{to{transform:translateX(-50%) scale(1.18);filter:hue-rotate(22deg)}}
 @media(max-width:900px){.nav-links{display:none!important}.nav-inner{grid-template-columns:1fr 1fr!important}.menu-btn{display:grid!important}.home-hero{min-height:760px!important;background-position:center 70%!important}.home-hero:after,.hero-gallery{display:none!important}.hero-copy{margin-bottom:90px!important}.launch-visual{right:5%!important;width:90%!important;height:48%!important}.launch-copy{padding:50px 7% 0!important}.launch-pair{grid-template-columns:1fr!important}.launch-pair .launch-module{min-height:560px!important}.product-grid{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:560px){.announcement{font-size:7px!important}.extra{display:none}.collection-nav{top:100px!important}.home-hero{min-height:680px!important;background-size:105% auto!important;background-position:center 71%!important}.home-hero h1{font-size:clamp(4.3rem,19vw,6.7rem)!important}.hero-copy{margin-bottom:70px!important}.hero-studio-link{display:none!important}.intro{padding:105px 7% 75px!important}.launch-module{min-height:590px!important}.launch-module h2{font-size:clamp(3.7rem,16vw,5.5rem)!important}.launch-visual{right:3%!important;width:94%!important;height:45%!important}.latest-head{display:block!important}.latest-head p{margin-top:18px}.promo-grid{grid-template-columns:1fr!important}.real-work-grid{grid-template-columns:repeat(2,1fr)!important}.work-shot{min-height:210px!important}.subnav{top:129px!important}.collection-hero{min-height:570px!important}.product-grid{grid-template-columns:1fr!important}}
+
+/* ===== Redesign round 1 (2026-10-20) — from preview comments ===== */
+:root{--nav-h:72px;--chips-h:57px}
+/* Collection bar: sit flush under the main nav; hide on scroll down, return on scroll up */
+.collection-nav{top:var(--nav-h)!important;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s ease!important;will-change:transform}
+body.chips-hidden .collection-nav{transform:translateY(-100%);opacity:0;pointer-events:none}
+.subnav{top:calc(var(--nav-h) + var(--chips-h))!important;transition:top .35s cubic-bezier(.2,.8,.2,1)}
+body.chips-hidden .subnav{top:var(--nav-h)!important}
+@media(max-width:560px){.collection-nav{top:var(--nav-h)!important}}
+/* Hero: image fills the whole screen, copy sits higher */
+.home-hero{min-height:calc(100svh - var(--nav-h) - var(--chips-h))!important;align-items:flex-start!important;padding-block:clamp(56px,11vh,130px) clamp(48px,8vh,90px)!important;background:linear-gradient(90deg,rgba(11,6,13,.94) 0%,rgba(11,6,13,.62) 42%,rgba(11,6,13,.12) 100%),url("products/wedding-names-date-hoop.png") center/cover no-repeat,#171016!important}
+.hero-copy{margin:0!important}
+@media(max-width:900px){.home-hero{min-height:calc(100svh - var(--nav-h) - var(--chips-h))!important;background:linear-gradient(180deg,rgba(11,6,13,.9) 0%,rgba(11,6,13,.55) 55%,rgba(11,6,13,.25) 100%),url("products/wedding-names-date-hoop.png") center/cover no-repeat,#171016!important}}
+/* Feature blocks: image fills its frame */
+.launch-visual img,.launch-visual img[src^="assets/"]{width:100%!important;height:100%!important;object-fit:cover!important;padding:0!important;background:none!important}
+/* Product listings: image fills the card */
+.home-product img,.home-product img[src^="assets/"]{height:380px!important;object-fit:cover!important;padding:0!important;background:none!important}
+.product-img img,.product-img img[src^="assets/"],.product img{object-fit:cover!important;padding:0!important;background:none!important}
