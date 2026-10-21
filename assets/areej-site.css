@@ -860,3 +860,13 @@ footer .brand-copy small{color:var(--gold)}
 /* hoop filters only on the Hoops collection */
 .hoop-filter-wrap.hoops-only{display:none}
 .hoop-mode .hoop-filter-wrap.hoops-only{display:flex}
+
+/* ---- Home Gifts block: clearly "coming soon" (2026-10-21) ---- */
+.soon-pill{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;margin-bottom:18px;padding:8px 16px;border-radius:999px;background:var(--saffron);color:var(--damson);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 10px 26px rgba(242,193,78,.35)}
+.soon-dot{width:8px;height:8px;border-radius:50%;background:var(--damson);animation:twinkle 1.8s ease-in-out infinite}
+.soon-note{max-width:380px;margin-top:14px;font-size:15px;opacity:.85}
+.launch-module.is-coming-soon .launch-visual img{filter:saturate(.85) brightness(.8)}
+.launch-module.is-coming-soon:hover .launch-visual img{filter:saturate(1) brightness(.9)}
+.soon-ribbon{position:absolute;top:50%;left:50%;z-index:2;padding:14px 34px;border:1px solid rgba(63,15,41,.2);border-radius:999px;background:rgba(242,193,78,.95);color:var(--damson);font-family:var(--display);font-size:clamp(26px,3vw,38px);font-style:italic;font-weight:600;white-space:nowrap;box-shadow:0 20px 50px rgba(0,0,0,.3);transform:translate(-50%,-50%) rotate(-6deg)}
+.soon-ribbon:before,.soon-ribbon:after{position:absolute;top:50%;width:18px;height:2px;content:"";background:repeating-linear-gradient(90deg,var(--damson) 0 4px,transparent 4px 7px);opacity:.6}
+.soon-ribbon:before{left:12px}.soon-ribbon:after{right:12px}

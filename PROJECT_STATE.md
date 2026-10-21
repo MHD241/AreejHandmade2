@@ -104,6 +104,12 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - `assets/placeholders/` was deleted because nothing uses it any more.
   - **Bug fixed:** the hoop filter buttons were showing on every collection. They now show on Hoops only.
 
+  - Home Gifts block is now clearly "coming soon" (preview version 12):
+    - A saffron "Coming soon" pill with a pulsing dot above the title.
+    - The subtitle reads "Gift sets are on the way." with a note offering gift wrap or a custom gift.
+    - The main button reads "Ask for a custom gift" and opens WhatsApp.
+    - The photo is dimmed, with a large tilted "Coming soon" stitched ribbon across it.
+
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
 - Mulberry family: mist `#f3e6ec`, rose silk `#e2bccb`, dusty rose `#c4879d`, mulberry `#6e1f45`, damson `#3f0f29`.
