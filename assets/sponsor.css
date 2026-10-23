@@ -79,3 +79,5 @@ footer .copyright .nv-line{color:var(--muslin)}
 :root[data-theme="dark"] .sp-steps article,:root[data-theme="dark"] .sp-products article{border-color:var(--line-gold,rgba(196,162,101,.28));background:var(--night-3,#33222c)}
 :root[data-theme="dark"] .sp-products strong{color:var(--saffron,#f2c14e)}
 :root[data-theme="dark"] .sp-head h2,:root[data-theme="dark"] .sp-hero h1,:root[data-theme="dark"] .sp-steps h3,:root[data-theme="dark"] .sp-products h3,:root[data-theme="dark"] .sp-guarantee h2{color:var(--muslin)}
+.sp-note a{color:var(--mulberry);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+:root[data-theme="dark"] .sp-note a{color:var(--saffron,#f2c14e)}
