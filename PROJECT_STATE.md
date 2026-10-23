@@ -133,6 +133,13 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - **Not acted on:** a resolved thread said a hoop "is part of the newborn birth hoop". I did not merge anything for it (see open questions).
   - **Open question:** is the Nursery Rainbow Hoop (h7, Muhammad balloon keepsake photo) part of the New Baby Birth Hoop (h6)?
 
+- Phase 13: NUVOTAP sponsorship (2026-10-23, branch `nuvotap-sponsor`, NOT pushed).
+  - **Where it shows:** a "Sponsored by [nuvotap]" chip first in the top strip of the home page and all 14 product pages; a "Sponsored by" chip in every footer; a navy "Proudly sponsored by NUVOTAP" band above the home footer; and a new page, `sponsored.html`.
+  - **Sponsored page:** hero, what NUVOTAP does, how it works (3 steps), the cards and prices, the 30-day guarantee, a "why we are proud" note, and a call to action. Facts come from nuvotap.com on 2026-10-23 (cards £9.99, blank from £4.99, URL programming £0.50, profile £5). A line says prices should be checked on nuvotap.com.
+  - **Files:** `sponsored.html`, `assets/sponsor.css` (shared by the home page, product pages and the sponsored page).
+  - **Logo:** linked directly from https://nuvotap.com/assets/nuvotap-logo.webp, with the text "nuvotap" as fallback. The workspace could not download it. To bundle a local copy, attach the logo file and swap the src.
+  - **Not included:** Design Studio and story pages have no sponsor strip.
+
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
 - Mulberry family: mist `#f3e6ec`, rose silk `#e2bccb`, dusty rose `#c4879d`, mulberry `#6e1f45`, damson `#3f0f29`.
