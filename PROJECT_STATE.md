@@ -133,6 +133,15 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - **Not acted on:** a resolved thread said a hoop "is part of the newborn birth hoop". I did not merge anything for it (see open questions).
   - **Open question:** is the Nursery Rainbow Hoop (h7, Muhammad balloon keepsake photo) part of the New Baby Birth Hoop (h6)?
 
+- Phase 13: NUVOTAP sponsorship (2026-10-23, branch `nuvotap-sponsor`, NOT pushed).
+  - **Where it shows:** a "Sponsored by [nuvotap]" chip first in the top strip of the home page and all 14 product pages; a "Sponsored by" chip in every footer; a navy "Proudly sponsored by NUVOTAP" band above the home footer; and a new page, `sponsored.html`.
+  - **Sponsored page:** hero, what NUVOTAP does, how it works (3 steps), the cards and prices, the 30-day guarantee, a "why we are proud" note, and a call to action. Facts come from nuvotap.com on 2026-10-23. **No prices are shown** (owner's request); the page points to nuvotap.com or hello@nuvotap.com instead.
+  - **Style (2026-10-23, per owner):** the sponsored page mixes NUVOTAP and Areej. NUVOTAP side: navy `#080d20` sections, italic emphasis words, 01/02/03 steps, "One Tap. More Connection.". Areej side: an embroidery hoop holding the logo, gold running stitches and dashed gold borders, saffron stitch marquee, the pink-to-saffron gradient, linen/night plum sections that follow light/dark mode. NUVOTAP's exact CSS could not be read, so the navy and italic styling are inferred from its page markup. Send a screenshot of nuvotap.com to match it more closely.
+  - **Files:** `sponsored.html`, `assets/sponsor.css` (shared by the home page, product pages and the sponsored page).
+  - **Logo:** linked directly from https://nuvotap.com/assets/nuvotap-logo.webp, with the text "nuvotap" as fallback. The workspace could not download it. To bundle a local copy, attach the logo file and swap the src.
+  - **Not included:** Design Studio and story pages have no sponsor strip.
+  - **Header button fix (2026-10-23):** `.round-button` in `assets/product-page.css` now uses inline-flex centring, so the Home/Collection/Basket labels sit in the middle of the pill (all product pages and the sponsored page).
+
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
 - Mulberry family: mist `#f3e6ec`, rose silk `#e2bccb`, dusty rose `#c4879d`, mulberry `#6e1f45`, damson `#3f0f29`.
