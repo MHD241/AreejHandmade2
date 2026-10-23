@@ -123,6 +123,16 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - **Estimates to confirm with the owner:** hours and materials per size, and the contents of the Palestinian bundle.
   - **Side effects:** free UK delivery still starts at £60, so most hoops now qualify. Baskets saved in browsers before the change keep old prices.
 
+- Phase 12: owner's comments on preview version 14 (2026-10-23, branch `update-prices`, NOT pushed).
+  - **Events:** the nav "Events" link now goes to a new "Find Areej in person." section. It is data-driven: add dates to the `EVENTS` array in index.html (example in the comment above it). Past dates hide by themselves. With no dates it shows a "Dates coming soon" panel with a WhatsApp button.
+  - **Products merged (14 products now, 11 hoops):** Wildflower Initial (h23) is now a photo on Family Name Wreath (h20). Dua for the Home (h9) is now a photo on Quran & Dua Hoop (h10, the old Quran Verse Keepsake). Statement Floral Name (h3) is now a photo on Mini Memory (h2), because the owner said it is one of the small hoops. Product pages h3, h9 and h23 were deleted.
+  - **Teacher hoop (h17)** is now the Custom Quote Hoop (filter "Occasions" became "Quotes").
+  - **Name tag (k2):** one size, £16.
+  - **Spacing fix:** icons above "Hand-finished / Your colours / Personally confirmed" were squished in the preview (the viewer swaps icons for inline SVGs). CSS now covers both.
+  - **Fixed:** stale "View all 24 hoops" link in the hoop menu now says 11.
+  - **Not acted on:** a resolved thread said a hoop "is part of the newborn birth hoop". I did not merge anything for it (see open questions).
+  - **Open question:** is the Nursery Rainbow Hoop (h7, Muhammad balloon keepsake photo) part of the New Baby Birth Hoop (h6)?
+
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
 - Mulberry family: mist `#f3e6ec`, rose silk `#e2bccb`, dusty rose `#c4879d`, mulberry `#6e1f45`, damson `#3f0f29`.

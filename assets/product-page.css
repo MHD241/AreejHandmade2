@@ -88,6 +88,7 @@ img{display:block;width:100%}
 .made-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0}
 .made-strip div{padding:16px 12px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--white);text-align:center}
 .made-strip i{display:block;margin-bottom:6px;color:var(--gold);font-size:17px}
+.made-strip svg{display:block;width:auto;height:17px;margin:0 auto 8px;color:var(--gold)}
 .made-strip span{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--taupe)}
 
 /* Personalisation builder */
@@ -335,7 +336,7 @@ footer .brand-copy small{color:var(--gold)}
 :root[data-theme="dark"] .rating small,:root[data-theme="dark"] .lead{color:rgba(246,241,238,.72)}
 :root[data-theme="dark"] .price{color:var(--saffron);font-family:var(--display);font-size:34px;font-weight:600}
 :root[data-theme="dark"] .made-strip div{border-color:var(--line-gold);background:var(--night-3)}
-:root[data-theme="dark"] .made-strip i{color:var(--saffron)}
+:root[data-theme="dark"] .made-strip i,:root[data-theme="dark"] .made-strip svg{color:var(--saffron)}
 :root[data-theme="dark"] .made-strip span{color:var(--champagne)}
 :root[data-theme="dark"] .builder{border-color:var(--line-gold);background:var(--night-2);box-shadow:0 40px 90px rgba(0,0,0,.4)}
 :root[data-theme="dark"] .builder-title{background:radial-gradient(circle at 90% 0,rgba(242,193,78,.22),transparent 45%),linear-gradient(135deg,var(--mulberry),var(--damson))}
@@ -403,7 +404,7 @@ footer .brand-copy small{color:var(--gold)}
 :root:not([data-theme="dark"]) .price{color:var(--mulberry)}
 :root:not([data-theme="dark"]) .stars{color:var(--saffron)}
 :root:not([data-theme="dark"]) .main-photo{box-shadow:0 30px 70px rgba(43,26,34,.16),0 0 70px rgba(242,193,78,.18)}
-:root:not([data-theme="dark"]) .made-strip i{color:var(--mulberry)}
+:root:not([data-theme="dark"]) .made-strip i,:root:not([data-theme="dark"]) .made-strip svg{color:var(--mulberry)}
 :root:not([data-theme="dark"]) .studio-note{border:1px solid rgba(122,86,0,.25)}
 :root:not([data-theme="dark"]) .related{background-color:var(--night-2,#271a21);color:var(--muslin)}
 :root:not([data-theme="dark"]) .related-head h2{color:var(--muslin)}
