@@ -133,7 +133,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - **Not acted on:** a resolved thread said a hoop "is part of the newborn birth hoop". I did not merge anything for it (see open questions).
   - **Open question:** is the Nursery Rainbow Hoop (h7, Muhammad balloon keepsake photo) part of the New Baby Birth Hoop (h6)?
 
-- Phase 13: NUVOTAP sponsorship (2026-10-23, branch `nuvotap-sponsor`, NOT pushed).
+- Phase 13: NUVOTAP sponsorship (2026-10-23, branch `nuvotap-sponsor`, merged into `main` via PR #4).
   - **Where it shows:** a "Sponsored by [nuvotap]" chip first in the top strip of the home page and all 14 product pages; a "Sponsored by" chip in every footer; a navy "Proudly sponsored by NUVOTAP" band above the home footer; and a new page, `sponsored.html`.
   - **Sponsored page:** hero, what NUVOTAP does, how it works (3 steps), the cards and prices, the 30-day guarantee, a "why we are proud" note, and a call to action. Facts come from nuvotap.com on 2026-10-23. **No prices are shown** (owner's request); the page points to nuvotap.com or hello@nuvotap.com instead.
   - **Style (2026-10-23, per owner):** the sponsored page mixes NUVOTAP and Areej. NUVOTAP side: navy `#080d20` sections, italic emphasis words, 01/02/03 steps, "One Tap. More Connection.". Areej side: an embroidery hoop holding the logo, gold running stitches and dashed gold borders, saffron stitch marquee, the pink-to-saffron gradient, linen/night plum sections that follow light/dark mode. NUVOTAP's exact CSS could not be read, so the navy and italic styling are inferred from its page markup. Send a screenshot of nuvotap.com to match it more closely.
