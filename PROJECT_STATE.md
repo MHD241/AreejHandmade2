@@ -1,6 +1,6 @@
 # Areej Handmade 2 — Project State
 
-Repo: MHD241/AreejHandmade2 (static site). Last updated: 2026-10-20.
+Repo: MHD241/AreejHandmade2 (static site). Last updated: 2026-10-23.
 Everything below is local only. **Nothing is pushed to GitHub yet.** Push only after the user approves the preview.
 Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full redesign)
 
@@ -114,6 +114,14 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
     - It is an SVG of a wrapped box with a gold bow, a "For you" tag, a small hoop and flowers.
     - A real stock photo couldn't be downloaded because the workspace blocks image sites. The user can attach one to swap in.
     - The "Coming soon" ribbon moved to the top-left corner so the gift stays visible.
+
+- Phase 11: price ladder for every product (2026-10-23, branch `update-prices`, NOT pushed; preview version 14).
+  - **Research:** UK hand-stitched floral/name hoops at 5 to 8" cost £25 to £100 (average about £50). Details and sources are in `Areej-Handmade-Pricing.xlsx` (sent in chat).
+  - **Per-size prices:** every product now has `prices:[...]` in the same order as `sizes` (index.html data and each product page's PRODUCT data). The size pills, size dropdown, add button, basket and related cards all use the chosen size's price.
+  - **New prices (small to large):** h1 48/62/80, h2 24/30/38, h3 95/120, h4 65/85/110, h5 68/88/108, h6 64/82, h7 40/54/72, h9 88/112, h10 92/118, h13 95/120, h15 72/92/115, h17 38/52, h20 92/118, h23 28/38/52, k2 13/18, k3 24, p2 30/45.
+  - **Design Studio:** base hoop is £44 / £60 / £78 (was £18 / £23 / £28); default Classic £60.
+  - **Estimates to confirm with the owner:** hours and materials per size, and the contents of the Palestinian bundle.
+  - **Side effects:** free UK delivery still starts at £60, so most hoops now qualify. Baskets saved in browsers before the change keep old prices.
 
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
