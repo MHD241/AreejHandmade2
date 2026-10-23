@@ -891,3 +891,25 @@ footer .brand-copy small{color:var(--gold)}
 :root[data-theme="dark"] .event-card .apple-link{color:var(--saffron)}
 :root[data-theme="dark"] .event-meta,:root[data-theme="dark"] .event-note{color:rgba(246,241,238,.72)}
 @media(max-width:640px){.event-card{grid-template-columns:auto 1fr}.event-card .apple-link{grid-column:1/-1}.event-date{width:66px;height:74px}}
+
+/* Hero: bright embroidery scene (2026-10-23). Light image, so text is dark and the dark overlays are removed. */
+:root .home-hero,:root[data-theme="dark"] .home-hero{color:var(--ink);background:#f6e9de}
+:root .home-hero:before,:root[data-theme="dark"] .home-hero:before{background:url("photos/hero-embroidery-scene.jpg") 78% center/cover no-repeat}
+:root .home-hero:after,:root[data-theme="dark"] .home-hero:after{background:linear-gradient(90deg,rgba(250,240,230,.55) 0%,rgba(250,240,230,.25) 38%,rgba(250,240,230,0) 60%)}
+:root .home-hero .hero-orbits,:root[data-theme="dark"] .home-hero .hero-orbits{display:none}
+:root .home-hero h1,:root[data-theme="dark"] .home-hero h1{color:var(--damson)}
+:root .home-hero h1 span,:root[data-theme="dark"] .home-hero h1 span{background:linear-gradient(90deg,var(--mulberry),#a8576f 55%,var(--antique));background-size:100% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:none}
+:root .home-hero p,:root[data-theme="dark"] .home-hero p{color:#4a3640}
+:root .home-hero .hero-eyebrow,:root[data-theme="dark"] .home-hero .hero-eyebrow{color:var(--antique)}
+:root .home-hero .hero-eyebrow:before,:root[data-theme="dark"] .home-hero .hero-eyebrow:before{background:var(--antique)}
+:root .home-hero .apple-pill,:root[data-theme="dark"] .home-hero .apple-pill{background:var(--mulberry);color:#fff}
+:root .home-hero .apple-pill:hover,:root[data-theme="dark"] .home-hero .apple-pill:hover{background:var(--damson)}
+:root .home-hero .apple-link,:root[data-theme="dark"] .home-hero .apple-link{color:var(--damson)}
+:root .hero-studio-link,:root[data-theme="dark"] .hero-studio-link{border-color:rgba(134,103,47,.45);background:rgba(255,250,244,.7);color:var(--damson)}
+:root .hero-studio-link:hover,:root[data-theme="dark"] .hero-studio-link:hover{border-color:var(--antique);background:rgba(255,250,244,.92)}
+:root .hero-studio-icon,:root[data-theme="dark"] .hero-studio-icon,:root .hero-studio-link small,:root[data-theme="dark"] .hero-studio-link small,:root .hero-studio-link>.fa-arrow-right,:root[data-theme="dark"] .hero-studio-link>.fa-arrow-right{color:var(--antique);border-color:var(--antique)}
+:root .hero-stats,:root[data-theme="dark"] .hero-stats{color:#4a3640}
+:root .hero-stats b,:root[data-theme="dark"] .hero-stats b{color:var(--mulberry)}
+:root .hero-stats li:before,:root[data-theme="dark"] .hero-stats li:before{color:var(--antique)}
+@media(max-width:760px){:root .home-hero:before,:root[data-theme="dark"] .home-hero:before{background-position:82% center}
+:root .home-hero:after,:root[data-theme="dark"] .home-hero:after{background:linear-gradient(180deg,rgba(250,240,230,.82) 0%,rgba(250,240,230,.55) 55%,rgba(250,240,230,.15) 100%)}}
