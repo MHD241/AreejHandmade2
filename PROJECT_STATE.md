@@ -142,6 +142,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - **Not included:** Design Studio and story pages have no sponsor strip.
   - **Header button fix (2026-10-23):** `.round-button` in `assets/product-page.css` now uses inline-flex centring, so the Home/Collection/Basket labels sit in the middle of the pill (all product pages and the sponsored page).
 - Phase 14: New hero image (2026-10-23, owner's picture). `assets/photos/hero-embroidery-scene.jpg`; hero CSS override block at the end of `assets/areej-site.css` (light image, so dark text, no dark overlay or gold orbits; stays light in dark mode). Old `hero-name-hoops.jpg` kept in the repo, unused.
+- Phase 15: Discount codes (2026-10-23, branch `discount-codes`, NOT pushed). Five codes in the `COUPONS` object in `index.html` (basket): WELCOME10 (10% off), THANKYOU5 (£5 off over £30), FREESHIP (free UK delivery), HOOP15 (15% off over £60), FAMILY20 (20% off over £100). Minimum spend re-checks as the basket changes; the code is added to the WhatsApp order message. Codes are visible in the page source (static site), so they are promotional codes, not secrets.
 
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
