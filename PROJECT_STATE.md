@@ -1,6 +1,6 @@
 # Areej Handmade 2 — Project State
 
-Repo: MHD241/AreejHandmade2 (static site). Last updated: 2026-10-20.
+Repo: MHD241/AreejHandmade2 (static site). Last updated: 2026-10-23.
 Everything below is local only. **Nothing is pushed to GitHub yet.** Push only after the user approves the preview.
 Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full redesign)
 
@@ -114,6 +114,24 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
     - It is an SVG of a wrapped box with a gold bow, a "For you" tag, a small hoop and flowers.
     - A real stock photo couldn't be downloaded because the workspace blocks image sites. The user can attach one to swap in.
     - The "Coming soon" ribbon moved to the top-left corner so the gift stays visible.
+
+- Phase 11: price ladder for every product (2026-10-23, branch `update-prices`, NOT pushed; preview version 14).
+  - **Research:** UK hand-stitched floral/name hoops at 5 to 8" cost £25 to £100 (average about £50). Details and sources are in `Areej-Handmade-Pricing.xlsx` (sent in chat).
+  - **Per-size prices:** every product now has `prices:[...]` in the same order as `sizes` (index.html data and each product page's PRODUCT data). The size pills, size dropdown, add button, basket and related cards all use the chosen size's price.
+  - **New prices (small to large):** h1 48/62/80, h2 24/30/38, h3 95/120, h4 65/85/110, h5 68/88/108, h6 64/82, h7 40/54/72, h9 88/112, h10 92/118, h13 95/120, h15 72/92/115, h17 38/52, h20 92/118, h23 28/38/52, k2 13/18, k3 24, p2 30/45.
+  - **Design Studio:** base hoop is £44 / £60 / £78 (was £18 / £23 / £28); default Classic £60.
+  - **Estimates to confirm with the owner:** hours and materials per size, and the contents of the Palestinian bundle.
+  - **Side effects:** free UK delivery still starts at £60, so most hoops now qualify. Baskets saved in browsers before the change keep old prices.
+
+- Phase 12: owner's comments on preview version 14 (2026-10-23, branch `update-prices`, NOT pushed).
+  - **Events:** the nav "Events" link now goes to a new "Find Areej in person." section. It is data-driven: add dates to the `EVENTS` array in index.html (example in the comment above it). Past dates hide by themselves. With no dates it shows a "Dates coming soon" panel with a WhatsApp button.
+  - **Products merged (14 products now, 11 hoops):** Wildflower Initial (h23) is now a photo on Family Name Wreath (h20). Dua for the Home (h9) is now a photo on Quran & Dua Hoop (h10, the old Quran Verse Keepsake). Statement Floral Name (h3) is now a photo on Mini Memory (h2), because the owner said it is one of the small hoops. Product pages h3, h9 and h23 were deleted.
+  - **Teacher hoop (h17)** is now the Custom Quote Hoop (filter "Occasions" became "Quotes").
+  - **Name tag (k2):** one size, £16.
+  - **Spacing fix:** icons above "Hand-finished / Your colours / Personally confirmed" were squished in the preview (the viewer swaps icons for inline SVGs). CSS now covers both.
+  - **Fixed:** stale "View all 24 hoops" link in the hoop menu now says 11.
+  - **Not acted on:** a resolved thread said a hoop "is part of the newborn birth hoop". I did not merge anything for it (see open questions).
+  - **Open question:** is the Nursery Rainbow Hoop (h7, Muhammad balloon keepsake photo) part of the New Baby Birth Hoop (h6)?
 
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.
