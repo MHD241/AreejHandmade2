@@ -140,6 +140,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
   - **Files:** `sponsored.html`, `assets/sponsor.css` (shared by the home page, product pages and the sponsored page).
   - **Logo:** linked directly from https://nuvotap.com/assets/nuvotap-logo.webp, with the text "nuvotap" as fallback. The workspace could not download it. To bundle a local copy, attach the logo file and swap the src.
   - **Not included:** Design Studio and story pages have no sponsor strip.
+  - **Header button fix (2026-10-23):** `.round-button` in `assets/product-page.css` now uses inline-flex centring, so the Home/Collection/Basket labels sit in the middle of the pill (all product pages and the sponsored page).
 
 ## Palette (approved)
 - Linen neutrals: muslin `#f6f1ee`, ecru `#ece4dc`, oat `#d9cdc2`, taupe `#76655f`, ink `#2b1a22`.

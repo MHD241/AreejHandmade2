@@ -38,7 +38,7 @@ img{display:block;width:100%}
 .header-nav>a,.header-nav .nav-trigger{font-size:13px;font-weight:500;transition:color .2s}
 .header-nav>a:hover,.header-nav .nav-trigger:hover{color:var(--mulberry)}
 .header-actions{display:flex;justify-content:flex-end;gap:8px}
-.round-button{position:relative;min-height:42px;padding:0 18px;border:1px solid var(--oat);border-radius:999px;background:transparent;font-size:13px;font-weight:500;transition:border-color .25s,background .25s}
+.round-button{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:0 18px;line-height:1;border:1px solid var(--oat);border-radius:999px;background:transparent;font-size:13px;font-weight:500;transition:border-color .25s,background .25s}
 .round-button:hover{border-color:var(--mulberry)}
 .round-button.primary{border-color:var(--mulberry);background:var(--mulberry);color:var(--white)}
 .round-button b{display:inline-grid;place-items:center;min-width:19px;height:19px;margin-left:6px;padding:0 5px;border-radius:20px;background:var(--saffron);color:var(--damson);font-size:10px}
