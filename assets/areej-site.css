@@ -926,8 +926,8 @@ footer .brand-copy small{color:var(--gold)}
 /* Each word floats on its own, at a different pace and phase */
 .hero-title .ht-areej{animation:titleFloatA 7s cubic-bezier(.45,0,.55,1) infinite alternate!important;will-change:transform}
 .hero-title .ht-handmade{animation:titleFloatB 9s cubic-bezier(.45,0,.55,1) -4s infinite alternate!important;will-change:transform}
-@keyframes titleFloatA{from{transform:translate3d(-2px,0,0) rotate(-.45deg)}to{transform:translate3d(3px,-12px,0) rotate(.45deg)}}
-@keyframes titleFloatB{from{transform:translate3d(-4px,-7px,0) rotate(.4deg)}to{transform:translate3d(4px,7px,0) rotate(-.4deg)}}
+@keyframes titleFloatA{from{transform:translate3d(-1px,0,0) rotate(-.35deg)}to{transform:translate3d(2px,-10px,0) rotate(.35deg)}}
+@keyframes titleFloatB{from{transform:translate3d(-1px,-2px,0) rotate(.3deg)}to{transform:translate3d(2px,-9px,0) rotate(-.3deg)}}
 @media(prefers-reduced-motion:reduce){.hero-title .ht-areej,.hero-title .ht-handmade{animation:none!important}}
 
 /* Header (2026-10-24): logo 30% smaller, everything else 10% bigger */
