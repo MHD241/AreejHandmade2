@@ -921,7 +921,7 @@ footer .brand-copy small{color:var(--gold)}
 .hero-title span{position:relative;display:block;isolation:isolate;background:none;-webkit-text-fill-color:currentColor;animation:none;font-style:normal;-webkit-text-stroke:.022em currentColor}
 .hero-title span:before{content:attr(data-text);position:absolute;inset:0;z-index:-1;color:var(--gold);-webkit-text-stroke:.075em var(--gold);pointer-events:none}
 .hero-title .ht-areej{font-size:clamp(5.6rem,13vw,12rem);color:var(--mulberry)}
-.hero-title .ht-handmade{margin:.06em 0 0 .3em;font-size:clamp(3.3rem,7.6vw,7rem)}
+.hero-title .ht-handmade{margin:.06em 0 0 .3em;font-size:clamp(2.8rem,6.4vw,5.9rem)}
 @keyframes titleFloat{0%,100%{transform:translate3d(0,0,0) rotate(-.6deg)}25%{transform:translate3d(4px,-9px,0) rotate(.2deg)}50%{transform:translate3d(0,-15px,0) rotate(.7deg)}75%{transform:translate3d(-4px,-7px,0) rotate(.1deg)}}
 /* Each word floats on its own, at a different pace and phase */
 .hero-title .ht-areej{animation:titleFloatA 7s ease-in-out infinite!important;will-change:transform}
@@ -941,9 +941,9 @@ footer .brand-copy small{color:var(--gold)}
 .icon-btn .ico{width:24px;height:24px}
 .theme-toggle{width:44px;height:44px}
 .theme-toggle svg{width:20px;height:20px}
-@media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title .ht-areej{font-size:clamp(4.6rem,24vw,7rem)}.hero-title .ht-handmade{margin-left:.15em;font-size:clamp(3rem,14vw,4.4rem)}}
+@media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title .ht-areej{font-size:clamp(4.6rem,24vw,7rem)}.hero-title .ht-handmade{margin-left:.15em;font-size:clamp(2.6rem,11.8vw,3.7rem)}}
 /* Hero title colours: explicit, so older hero gradient rules cannot make the letters transparent */
 :root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.022em var(--ht-fill)}
-:root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#6e1f45}
-:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#a75877}
+:root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#7a2b52}
+:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#934468}
 :root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#c99d42;-webkit-text-fill-color:#c99d42;-webkit-text-stroke:.049em #c99d42;background:none}
