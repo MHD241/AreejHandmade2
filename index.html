@@ -163,9 +163,17 @@
     </div>
   </section>
 
+  <section class="reviews-band" id="reviews">
+    <div class="reviews-head">
+      <div><small>Reviews</small><h2 class="serif">Kind words from our customers.</h2></div>
+      <div class="reviews-summary" id="reviewsSummary" aria-live="polite"></div>
+    </div>
+    <div class="reviews-grid" id="reviewsGrid"><p class="reviews-empty">Loading reviews…</p></div>
+  </section>
+
   <section class="feedback-band" id="feedback">
     <div class="feedback-card">
-      <div class="feedback-copy"><small>Your feedback</small><h2 class="serif">Tell us how we did.</h2><p>Bought something, or just browsed? Leave a rating and a few words. It goes straight to Areej and helps us make every piece better.</p></div>
+      <div class="feedback-copy"><small>Leave a review</small><h2 class="serif">Tell us how we did.</h2><p>Bought something, or just browsed? Leave a rating and a few words. Reviews are checked by Areej before they appear on the site.</p></div>
       <form class="feedback-form" id="feedbackForm" onsubmit="return sendFeedback(event)" novalidate>
         <label class="fb-field"><span>Your name</span><input id="fbName" name="name" type="text" maxlength="60" autocomplete="given-name" placeholder="First name is fine"></label>
         <fieldset class="fb-stars" aria-describedby="fbMsg"><legend>How many stars?</legend>
@@ -177,8 +185,9 @@
             <input type="radio" name="rating" id="fbStar1" value="1"><label for="fbStar1" title="1 star" aria-label="1 star">★</label>
           </div>
         </fieldset>
-        <label class="fb-field"><span>Your feedback</span><textarea id="fbText" name="feedback" rows="4" maxlength="800" placeholder="What did you love? What could be better?"></textarea></label>
-        <div class="fb-actions"><button class="button button-light" type="submit">Send feedback</button><small>Opens WhatsApp so you can send it to Areej.</small></div>
+        <label class="fb-field"><span>Your review</span><textarea id="fbText" name="feedback" rows="4" maxlength="800" placeholder="What did you love? What could be better?"></textarea></label>
+        <input class="fb-trap" id="fbTrap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="fb-actions"><button class="button button-light" id="fbSubmit" type="submit">Send review</button><small>Your review appears after Areej has approved it.</small></div>
         <p class="fb-msg" id="fbMsg" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -276,21 +285,45 @@ const priceFor=(p,size)=>{const i=p.sizes.indexOf(size);return p.prices&&i>=0?p.
     function updateTotals(){const t=totals();if(activeCode){const c=COUPONS[activeCode],cs=couponState(t.subtotal);$("discountMsg").textContent=cs.ok?`${activeCode} applied: ${c.label}.`:`${activeCode} needs a basket of ${money(c.min)} or more${cs.short?` (add ${money(cs.short)} more)`:""}.`}$("subtotal").textContent=money(t.subtotal);$("discount").textContent=`−${money(t.discount)}`;$("delivery").textContent=t.delivery===0&&cart.length?"FREE":money(t.delivery);$("total").textContent=money(t.total)}
     function applyDiscount(){const code=$("discountInput").value.trim().toUpperCase();if(!code){activeCode="";$("discountMsg").textContent="Enter a code first.";return updateTotals()}if(!COUPONS[code]){$("discountMsg").textContent=activeCode?`That code is not valid. ${activeCode} is still applied.`:"That code is not valid.";return updateTotals()}const previous=activeCode;activeCode=code;updateTotals();if(previous&&previous!==code)$("discountMsg").textContent=`${code} replaced ${previous}. Only one code can be used per order.`}
     function checkoutWhatsApp(){if(!cart.length)return showToast("Your basket is empty.");const t=totals();let m="Hello Areej Handmade! 🌸\n\nI would like to order:\n\n";cart.forEach((x,i)=>{m+=`${i+1}. ${x.name}\nQuantity: ${x.qty}\nColour: ${x.colour}\nSize: ${x.size}\n${x.personal?`Personalisation: ${x.personal}\n`:""}${x.options?Object.entries(x.options).map(([key,value])=>`${key}: ${value}`).join("\n")+"\n":""}${x.privateMessage?`Private instructions: ${x.privateMessage}\n`:""}${x.giftMessage?`Gift-card message: ${x.giftMessage}\n`:""}Item total: ${money(x.price*x.qty)}\n\n`});m+=`Subtotal: ${money(t.subtotal)}\n${t.code?`Discount code: ${t.code}\n`:""}Discount: -${money(t.discount)}\nUK delivery: ${t.delivery?money(t.delivery):"FREE"}\nTotal: ${money(t.total)}\n\nPlease confirm availability and delivery details. Thank you!`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(m)}`,"_blank")}
-    function sendFeedback(e){if(e)e.preventDefault();const name=$("fbName").value.trim(),text=$("fbText").value.trim(),r=document.querySelector('#feedbackForm input[name="rating"]:checked'),msg=$("fbMsg");msg.classList.remove("ok");
+    /* REVIEWS: stored in Supabase (table "reviews"). Fill in the project URL and the PUBLISHABLE (anon) key; the publishable key is safe to keep in the page.
+       New reviews are saved as approved=false and only show on the site after approval in Supabase. */
+    const REVIEWS_CFG={url:"",key:""};
+    const reviewsOn=()=>!!(REVIEWS_CFG.url&&REVIEWS_CFG.key);
+    const reviewsHeaders=extra=>Object.assign({apikey:REVIEWS_CFG.key,Authorization:"Bearer "+REVIEWS_CFG.key},extra||{});
+    const escHtml=t=>String(t==null?"":t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    const starsHtml=n=>`<span class="rv-stars" aria-label="${n} out of 5 stars">${"★".repeat(n)}<i>${"★".repeat(5-n)}</i></span>`;
+    function renderReviews(list){const grid=$("reviewsGrid"),sum=$("reviewsSummary");
+      if(!list.length){sum.innerHTML="";grid.innerHTML='<p class="reviews-empty">No reviews yet. Be the first to leave one below.</p>';return}
+      const avg=list.reduce((t,r)=>t+r.rating,0)/list.length;
+      sum.innerHTML=`<strong>${avg.toFixed(1)}</strong>${starsHtml(Math.round(avg))}<span>${list.length} review${list.length===1?"":"s"}</span>`;
+      grid.innerHTML=list.map(r=>{const d=r.created_at?new Date(r.created_at).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"}):"";return `<article class="review-card">${starsHtml(r.rating)}<p>${escHtml(r.message)}</p><div class="rv-by"><strong>${escHtml(r.name)}</strong>${d?`<span>${escHtml(d)}</span>`:""}</div></article>`}).join("")}
+    async function loadReviews(){const grid=$("reviewsGrid");if(!grid)return;
+      if(!reviewsOn()){grid.innerHTML='<p class="reviews-empty">Customer reviews are coming soon.</p>';const b=$("fbSubmit");if(b){b.disabled=true}return}
+      try{const res=await fetch(`${REVIEWS_CFG.url}/rest/v1/reviews?select=name,rating,message,created_at&approved=eq.true&order=created_at.desc&limit=12`,{headers:reviewsHeaders()});if(!res.ok)throw new Error(res.status);renderReviews(await res.json())}
+      catch(err){grid.innerHTML='<p class="reviews-empty">Reviews could not be loaded right now.</p>'}}
+    async function sendFeedback(e){if(e)e.preventDefault();const msg=$("fbMsg"),btn=$("fbSubmit");msg.classList.remove("ok");
+      if(!reviewsOn()){msg.textContent="Reviews are not open yet. Please check back soon.";return false}
+      if($("fbTrap").value){return false}
+      const name=$("fbName").value.trim(),text=$("fbText").value.trim(),r=document.querySelector('#feedbackForm input[name="rating"]:checked');
       if(!name){msg.textContent="Please add your name.";$("fbName").focus();return false}
       if(!r){msg.textContent="Please choose how many stars.";return false}
-      if(!text){msg.textContent="Please write a little feedback.";$("fbText").focus();return false}
-      const n=Number(r.value),stars="★".repeat(n)+"☆".repeat(5-n);
-      const m=`Hello Areej Handmade! 🌸\n\nI would like to leave some feedback.\n\nName: ${name}\nRating: ${stars} (${n}/5)\nFeedback: ${text}`;
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(m)}`,"_blank");
-      $("feedbackForm").reset();msg.classList.add("ok");msg.textContent="Thank you! WhatsApp has opened with your feedback. Just press send.";return false}
+      if(!text){msg.textContent="Please write a few words.";$("fbText").focus();return false}
+      let last=0;try{last=Number(localStorage.getItem("areejReviewAt")||0)}catch(x){}
+      if(Date.now()-last<60000){msg.textContent="Thank you! Please wait a minute before sending another review.";return false}
+      btn.disabled=true;msg.textContent="Sending…";
+      try{const res=await fetch(`${REVIEWS_CFG.url}/rest/v1/reviews`,{method:"POST",headers:reviewsHeaders({"Content-Type":"application/json",Prefer:"return=minimal"}),body:JSON.stringify({name:name.slice(0,60),rating:Number(r.value),message:text.slice(0,800)})});
+        if(!res.ok)throw new Error(res.status);
+        try{localStorage.setItem("areejReviewAt",String(Date.now()))}catch(x){}
+        $("feedbackForm").reset();msg.classList.add("ok");msg.textContent="Thank you! Your review has been sent and will appear once Areej has approved it."}
+      catch(err){msg.textContent="Sorry, your review could not be sent. Please try again in a moment."}
+      btn.disabled=false;return false}
     function openWhatsApp(){window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Areej Handmade! 🌸 I would like to ask about your products.")}`,"_blank")}
     function showLayer(id){$(id).classList.add(id==="cart"?"open":"show");$("overlay").classList.add("show");document.body.classList.add("locked")}function openCart(){showLayer("cart")}function openMenu(){showLayer("mobileMenu");$("mobileMenu").classList.add("open")}
     function closeLayers(){$("productModal").classList.remove("show");$("cart").classList.remove("open");$("mobileMenu").classList.remove("open","show");$("overlay").classList.remove("show");document.body.classList.remove("locked")}
     function scrollToLineup(){$("lineup").scrollIntoView({behavior:"smooth"})}let toastTimer;function showToast(msg){$("toast").textContent=msg;$("toast").classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2600)}
     function initMotion(){const targets=document.querySelectorAll(".launch-module,.promo-tile,.story-card,.service,.home-product");if("IntersectionObserver" in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("animate-in");observer.unobserve(entry.target)}}),{threshold:.08});targets.forEach(el=>observer.observe(el))}else targets.forEach(el=>el.classList.add("animate-in"))}
     document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLayers()});
-    $("languageSelect").value=currentLanguage;renderHomeProducts();renderEvents();renderCart();initMotion();const initial=location.hash.slice(1);if(collections[initial])openCollection(initial);else if(initial==="cart"){goHome();setTimeout(openCart,120)}else goHome();translatePage();
+    $("languageSelect").value=currentLanguage;renderHomeProducts();renderEvents();loadReviews();renderCart();initMotion();const initial=location.hash.slice(1);if(collections[initial])openCollection(initial);else if(initial==="cart"){goHome();setTimeout(openCart,120)}else goHome();translatePage();
   </script>
 <script>
 /* Keep sticky collection header aligned under the main nav */
