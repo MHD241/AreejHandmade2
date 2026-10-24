@@ -917,16 +917,16 @@ footer .brand-copy small{color:var(--gold)}
 /* Hero title: real text in Alex Brush, the closest match to the logo lettering, with a gold outline and a gentle float (2026-10-24) */
 @font-face{font-family:"Alex Brush";src:url("fonts/alex-brush.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
 .home-hero h1.hero-title{display:block;margin:0 0 10px -6px;font-family:"Alex Brush","Snell Roundhand","Brush Script MT",cursive;font-weight:400;font-style:normal;line-height:.92;letter-spacing:0;color:var(--mulberry)}
-.home-hero h1.hero-title{filter:drop-shadow(0 12px 18px rgba(63,15,41,.25))}
+.home-hero h1.hero-title{filter:drop-shadow(0 8px 24px rgba(63,15,41,.12))}
 .hero-title span{position:relative;display:block;isolation:isolate;background:none;-webkit-text-fill-color:currentColor;animation:none;font-style:normal;-webkit-text-stroke:.022em currentColor}
 .hero-title span:before{content:attr(data-text);position:absolute;inset:0;z-index:-1;color:var(--gold);-webkit-text-stroke:.075em var(--gold);pointer-events:none}
 .hero-title .ht-areej{font-size:clamp(5.6rem,13vw,12rem);color:var(--mulberry)}
 .hero-title .ht-handmade{margin:.06em 0 0 .3em;font-size:clamp(2.8rem,6.4vw,5.9rem)}
 @keyframes titleFloat{0%,100%{transform:translate3d(0,0,0) rotate(-.6deg)}25%{transform:translate3d(4px,-9px,0) rotate(.2deg)}50%{transform:translate3d(0,-15px,0) rotate(.7deg)}75%{transform:translate3d(-4px,-7px,0) rotate(.1deg)}}
 /* Each word floats on its own, at a different pace and phase */
-.hero-title .ht-areej{animation:titleFloatA 7s cubic-bezier(.45,0,.55,1) infinite alternate!important;will-change:transform}
+.hero-title .ht-areej{animation:titleFloatA 10s cubic-bezier(.45,0,.55,1) infinite alternate!important;will-change:transform}
 .hero-title .ht-handmade{animation:titleFloatB 9s cubic-bezier(.45,0,.55,1) -4s infinite alternate!important;will-change:transform}
-@keyframes titleFloatA{from{transform:translate3d(-3px,5px,0) rotate(-.55deg)}to{transform:translate3d(4px,-5px,0) rotate(.55deg)}}
+@keyframes titleFloatA{from{transform:translate3d(-2px,4px,0)}to{transform:translate3d(2px,-5px,0)}}
 @keyframes titleFloatB{from{transform:translate3d(-3px,4px,0) rotate(.5deg)}to{transform:translate3d(4px,-5px,0) rotate(-.5deg)}}
 @media(prefers-reduced-motion:reduce){.hero-title .ht-areej,.hero-title .ht-handmade{animation:none!important}}
 
@@ -943,10 +943,10 @@ footer .brand-copy small{color:var(--gold)}
 .theme-toggle svg{width:20px;height:20px}
 @media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title .ht-areej{font-size:clamp(4.6rem,24vw,7rem)}.hero-title .ht-handmade{margin-left:.15em;font-size:clamp(2.6rem,11.8vw,3.7rem)}}
 /* Hero title colours: explicit, so older hero gradient rules cannot make the letters transparent */
-:root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.022em var(--ht-fill)}
+:root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.012em var(--ht-fill)}
 :root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#7a2b52}
 :root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#7d3a59}
-:root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#c99d42;-webkit-text-fill-color:#c99d42;-webkit-text-stroke:.049em #c99d42;background:none}
+:root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#d2ae66;-webkit-text-fill-color:#d2ae66;-webkit-text-stroke:.039em #d2ae66;background:none}
 
 /* Trial (2026-10-24): script "Areej" + italic serif "Handmade." with the original pink-to-gold gradient */
 :root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{font-family:var(--display),"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(2.8rem,6.1vw,5.4rem);margin:-.1em 0 0 -.55em;letter-spacing:-.01em;-webkit-text-stroke:0;color:transparent;-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#7a2b52 0%,#a8576f 55%,#8a6a32 100%);-webkit-background-clip:text;background-clip:text}
