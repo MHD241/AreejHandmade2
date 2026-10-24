@@ -164,3 +164,11 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - **Pushed 2026-10-21:** branch `redesign-mulberry-gold`, commit `4e7f7c3`, pull request https://github.com/MHD241/AreejHandmade2/pull/1. **Merged into `main` on 2026-10-21 (merge commit `fccaba7`).**
 - Next steps: add photos for the 23 placeholder products; optionally delete the unused CSS files.
 - Before committing, the original `assets/gallery` and `assets/products` photos were restored, so the repository keeps the real files. Only `palestinian-accessory-bundle.png` (product p2) is still used.
+
+## Phase 19 — Customer accounts (optional) — 2026-10-24
+- Accounts are OPTIONAL: customers can order on WhatsApp and post reviews as a guest, or log in first (basket shows "Ordering as a guest / as <name>"; review form shows "Posting as a guest / member").
+- Supabase Auth over REST (email + password, forgot/reset password, email-confirmation links handled via URL hash). Session in localStorage `areejSession`.
+- Members get: wishlist hearts on home product cards (guest wishlist in localStorage `areejWishlist`, merged on login), basket + wishlist synced across devices (`user_data`), order history (`orders`, logged when "Send order on WhatsApp" is pressed while logged in), member-only codes MEMBER10 and MEMBERPLUS (COUPONS entries with `member:true`).
+- SQL for the owner to run once: `docs/supabase-accounts.sql` (also set Site URL = https://areejhandmade.com in Supabase Auth settings).
+- Limits: member codes are checked in the browser only (like all codes); account button is on the home page only (product pages' headers unchanged; they share the same basket); tested only against a mock Supabase.
+- Next: owner runs SQL, then "push it" to publish.

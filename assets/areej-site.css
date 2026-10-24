@@ -1015,3 +1015,46 @@ footer .brand-copy small{color:var(--gold)}
 :root[data-theme="dark"] .review-card .rv-by strong{color:var(--muslin)}
 :root[data-theme="dark"] .rv-stars i{color:rgba(246,241,238,.2)}
 :root[data-theme="dark"] .reviews-empty{border-color:var(--line-gold,rgba(196,162,101,.28));color:rgba(246,241,238,.65)}
+
+/* ===== Accounts ===== */
+.acct-dot{position:absolute;top:7px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--saffron);box-shadow:0 0 0 2px var(--muslin);display:none}
+#accountBtn{position:relative}#accountBtn.in .acct-dot{display:block}
+.fav-btn{position:absolute;top:12px;right:12px;z-index:3;display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:rgba(255,253,251,.88);color:var(--mulberry);cursor:pointer;backdrop-filter:blur(6px);transition:transform .25s var(--ease),background .25s}
+.fav-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;transition:fill .25s}
+.fav-btn:hover{transform:scale(1.08)}.fav-btn.on svg{fill:currentColor}
+.acct-modal{width:min(480px,calc(100% - 28px));padding:36px 32px 30px}
+.acct-modal h2{margin:2px 0 6px;font-size:2rem;color:var(--damson)}
+.ac-over{margin:0;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--antique)}
+.ac-sub{margin:0 0 18px;color:var(--taupe);font-size:14px;line-height:1.55}
+.ac-field{display:grid;gap:7px;margin-bottom:14px;font-size:13px;font-weight:600;color:var(--ink)}
+.ac-field input{width:100%;padding:13px 16px;border:1px solid var(--oat);border-radius:14px;background:rgba(255,255,255,.75);color:var(--ink);font:inherit;font-weight:400}
+.ac-field input:focus{border-color:var(--mulberry);outline:0;box-shadow:0 0 0 3px rgba(122,43,82,.14)}
+.ac-msg{min-height:20px;margin:0 0 10px;font-size:13px;color:var(--taupe)}.ac-msg.err{color:#a23a3a}.ac-msg.ok{color:#3d6b46}
+.acct-modal form .button{width:100%}
+.ac-links{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;margin-top:14px}
+.ac-link{padding:4px 0;border:0;background:none;color:var(--mulberry);font:inherit;font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.ac-link.out{margin-top:18px}
+.ac-tabs{display:flex;gap:6px;margin-bottom:14px;padding:4px;border-radius:999px;background:var(--ecru)}
+.ac-tabs button{flex:1;padding:9px 6px;border:0;border-radius:999px;background:transparent;color:var(--taupe);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.ac-tabs button.on{background:var(--white);color:var(--mulberry);box-shadow:0 2px 8px rgba(43,26,34,.1)}
+.ac-list{display:grid;gap:10px;max-height:46vh;overflow:auto}
+.ac-row{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.55)}
+.ac-row img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.ac-row>div{flex:1;min-width:0}.ac-row strong{display:block;font-size:14px;color:var(--ink)}.ac-row small{display:block;margin-top:2px;color:var(--taupe);font-size:12.5px;line-height:1.4}
+.ac-x{padding:8px 14px;border:1px solid var(--mulberry);border-radius:999px;background:transparent;color:var(--mulberry);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.ac-empty,.ac-note{margin:6px 0;color:var(--taupe);font-size:13.5px;line-height:1.55}
+.cart-who,.fb-who{margin:0 0 10px;font-size:12.5px;color:var(--taupe);line-height:1.5}
+.fb-who{text-align:center;margin-top:8px}
+.cart-who strong,.fb-who strong{color:var(--mulberry)}
+:root[data-theme="dark"] .acct-modal h2{color:var(--muslin)}
+:root[data-theme="dark"] .ac-field{color:var(--muslin)}
+:root[data-theme="dark"] .ac-field input{border-color:var(--line-gold,rgba(196,162,101,.28));background:rgba(255,255,255,.06);color:var(--muslin)}
+:root[data-theme="dark"] .ac-row{background:rgba(255,255,255,.04);border-color:var(--line-gold,rgba(196,162,101,.28))}
+:root[data-theme="dark"] .ac-row strong{color:var(--muslin)}
+:root[data-theme="dark"] .ac-tabs{background:var(--night-3)}
+:root[data-theme="dark"] .ac-tabs button.on{background:var(--night);color:var(--saffron)}
+:root[data-theme="dark"] .ac-link,:root[data-theme="dark"] .ac-x,:root[data-theme="dark"] .cart-who strong,:root[data-theme="dark"] .fb-who strong{color:var(--rose);border-color:var(--rose)}
+:root[data-theme="dark"] .ac-link{border:0}
+:root[data-theme="dark"] .fav-btn{background:rgba(28,16,22,.82);color:var(--rose);border-color:var(--line-gold,rgba(196,162,101,.28))}
+:root[data-theme="dark"] .acct-dot{box-shadow:0 0 0 2px var(--night)}
+@media(max-width:560px){.acct-modal{padding:30px 20px 24px}}
