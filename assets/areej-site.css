@@ -945,5 +945,5 @@ footer .brand-copy small{color:var(--gold)}
 /* Hero title colours: explicit, so older hero gradient rules cannot make the letters transparent */
 :root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.022em var(--ht-fill)}
 :root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#7a2b52}
-:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#934468}
+:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#7d3a59}
 :root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#c99d42;-webkit-text-fill-color:#c99d42;-webkit-text-stroke:.049em #c99d42;background:none}
