@@ -952,3 +952,38 @@ footer .brand-copy small{color:var(--gold)}
 :root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{font-family:var(--display),"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(2.8rem,6.1vw,5.4rem);margin:-.1em 0 0 -.33em;letter-spacing:-.01em;-webkit-text-stroke:0;color:transparent;-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#7a2b52 0%,#a8576f 55%,#8a6a32 100%);-webkit-background-clip:text;background-clip:text}
 :root .home-hero h1.hero-title .ht-handmade:before,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade:before{display:none}
 @media(max-width:760px){:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{font-size:clamp(2.5rem,10.5vw,3.4rem);margin-left:-.03em;margin-top:-.08em}}
+
+/* Feedback box (2026-10-24): name, star rating, feedback; sent to Areej on WhatsApp */
+.feedback-band{padding:clamp(40px,6vw,72px) var(--gutter,5%) clamp(56px,8vw,96px);background:var(--muslin)}
+.feedback-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start;max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,52px);border:1px solid var(--oat);border-radius:var(--r-lg,28px);background:linear-gradient(160deg,#fffaf4,#f6e9de)}
+.feedback-copy small{display:block;margin-bottom:14px;color:var(--antique);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.feedback-copy h2{font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.04;color:var(--damson)}
+.feedback-copy p{max-width:420px;margin-top:16px;color:var(--taupe)}
+.feedback-form{display:grid;gap:18px}
+.fb-field{display:grid;gap:8px;font-size:13px;font-weight:600;color:var(--ink)}
+.fb-field input,.fb-field textarea{width:100%;padding:13px 16px;border:1px solid var(--oat);border-radius:14px;background:rgba(255,255,255,.75);color:var(--ink);font:inherit;font-weight:400;transition:border-color .25s,box-shadow .25s}
+.fb-field textarea{resize:vertical;min-height:110px}
+.fb-field input:focus,.fb-field textarea:focus{border-color:var(--mulberry);outline:0;box-shadow:0 0 0 3px rgba(122,43,82,.14)}
+.fb-stars{margin:0;padding:0;border:0}
+.fb-stars legend{margin-bottom:6px;padding:0;font-size:13px;font-weight:600;color:var(--ink)}
+.fb-star-row{display:inline-flex;flex-direction:row-reverse;gap:4px}
+.fb-star-row input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.fb-star-row label{cursor:pointer;font-size:38px;line-height:1;color:#e2d3c4;transition:color .15s,transform .15s}
+.fb-star-row label:hover,.fb-star-row label:hover~label,.fb-star-row input:checked~label{color:var(--saffron,#f2c14e)}
+.fb-star-row label:hover{transform:scale(1.1)}
+.fb-star-row input:focus-visible+label{outline:2px solid var(--mulberry);outline-offset:3px;border-radius:6px}
+.fb-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.fb-actions small{color:var(--taupe);font-size:12px}
+.fb-msg{min-height:1.4em;font-size:13px;color:#9a2f4d}
+.fb-msg.ok{color:#2f6b3d}
+:root[data-theme="dark"] .feedback-band{background:var(--night,#1c1016)}
+:root[data-theme="dark"] .feedback-card{border-color:var(--line-gold,rgba(196,162,101,.28));background:linear-gradient(160deg,#2a1823,#1f1219)}
+:root[data-theme="dark"] .feedback-copy small{color:var(--gold)}
+:root[data-theme="dark"] .feedback-copy h2{color:var(--muslin)}
+:root[data-theme="dark"] .feedback-copy p,:root[data-theme="dark"] .fb-actions small{color:rgba(246,241,238,.72)}
+:root[data-theme="dark"] .fb-field,:root[data-theme="dark"] .fb-stars legend{color:var(--muslin)}
+:root[data-theme="dark"] .fb-field input,:root[data-theme="dark"] .fb-field textarea{border-color:var(--line-gold,rgba(196,162,101,.28));background:rgba(255,255,255,.06);color:var(--muslin)}
+:root[data-theme="dark"] .fb-star-row label{color:rgba(246,241,238,.22)}
+:root[data-theme="dark"] .fb-star-row label:hover,:root[data-theme="dark"] .fb-star-row label:hover~label,:root[data-theme="dark"] .fb-star-row input:checked~label{color:var(--saffron,#f2c14e)}
+:root[data-theme="dark"] .fb-msg{color:#ff9db3}:root[data-theme="dark"] .fb-msg.ok{color:#8fd19e}
+@media(max-width:860px){.feedback-card{grid-template-columns:1fr}}
