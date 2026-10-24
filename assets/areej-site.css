@@ -944,6 +944,6 @@ footer .brand-copy small{color:var(--gold)}
 @media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title .ht-areej{font-size:clamp(4.6rem,24vw,7rem)}.hero-title .ht-handmade{margin-left:.15em;font-size:clamp(3rem,14vw,4.4rem)}}
 /* Hero title colours: explicit, so older hero gradient rules cannot make the letters transparent */
 :root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.022em var(--ht-fill)}
-:root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#9d4568}
-:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#c4879d}
+:root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#a75877}
+:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#a77385}
 :root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#c99d42;-webkit-text-fill-color:#c99d42;-webkit-text-stroke:.075em #c99d42;background:none}
