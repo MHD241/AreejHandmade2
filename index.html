@@ -287,7 +287,7 @@ const priceFor=(p,size)=>{const i=p.sizes.indexOf(size);return p.prices&&i>=0?p.
     function checkoutWhatsApp(){if(!cart.length)return showToast("Your basket is empty.");const t=totals();let m="Hello Areej Handmade! 🌸\n\nI would like to order:\n\n";cart.forEach((x,i)=>{m+=`${i+1}. ${x.name}\nQuantity: ${x.qty}\nColour: ${x.colour}\nSize: ${x.size}\n${x.personal?`Personalisation: ${x.personal}\n`:""}${x.options?Object.entries(x.options).map(([key,value])=>`${key}: ${value}`).join("\n")+"\n":""}${x.privateMessage?`Private instructions: ${x.privateMessage}\n`:""}${x.giftMessage?`Gift-card message: ${x.giftMessage}\n`:""}Item total: ${money(x.price*x.qty)}\n\n`});m+=`Subtotal: ${money(t.subtotal)}\n${t.code?`Discount code: ${t.code}\n`:""}Discount: -${money(t.discount)}\nUK delivery: ${t.delivery?money(t.delivery):"FREE"}\nTotal: ${money(t.total)}\n\nPlease confirm availability and delivery details. Thank you!`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(m)}`,"_blank")}
     /* REVIEWS: stored in Supabase (table "reviews"). Fill in the project URL and the PUBLISHABLE (anon) key; the publishable key is safe to keep in the page.
        New reviews are saved as approved=false and only show on the site after approval in Supabase. */
-    const REVIEWS_CFG={url:"",key:""};
+    const REVIEWS_CFG={url:"https://wnfchmkddbooqnuqipsd.supabase.co",key:"sb_publishable_VyJBkZLWcCAJJ046398-4A_h91b0xaW"};
     const reviewsOn=()=>!!(REVIEWS_CFG.url&&REVIEWS_CFG.key);
     const reviewsHeaders=extra=>Object.assign({apikey:REVIEWS_CFG.key,Authorization:"Bearer "+REVIEWS_CFG.key},extra||{});
     const escHtml=t=>String(t==null?"":t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
