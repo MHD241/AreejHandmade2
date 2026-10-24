@@ -914,11 +914,16 @@ footer .brand-copy small{color:var(--gold)}
 @media(max-width:760px){:root .home-hero:before,:root[data-theme="dark"] .home-hero:before{background-position:82% center}
 :root .home-hero:after,:root[data-theme="dark"] .home-hero:after{background:linear-gradient(180deg,rgba(250,240,230,.82) 0%,rgba(250,240,230,.55) 55%,rgba(250,240,230,.15) 100%)}}
 
-/* Hero title as a picture, gently floating (2026-10-24) */
-.home-hero h1.hero-title{margin:0 0 6px -10px;font-size:0;line-height:0}
-.hero-title img{display:block;width:min(100%,clamp(300px,44vw,660px));height:auto;transform-origin:50% 60%;animation:titleFloat 7s ease-in-out infinite;filter:drop-shadow(0 18px 22px rgba(63,15,41,.22));will-change:transform}
+/* Hero title: real text in Alex Brush, the closest match to the logo lettering, with a gold outline and a gentle float (2026-10-24) */
+@font-face{font-family:"Alex Brush";src:url("fonts/alex-brush.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+.home-hero h1.hero-title{display:block;margin:0 0 10px -6px;font-family:"Alex Brush","Snell Roundhand","Brush Script MT",cursive;font-weight:400;font-style:normal;line-height:.92;letter-spacing:0;color:var(--mulberry);animation:titleFloat 7s ease-in-out infinite;will-change:transform}
+.home-hero h1.hero-title{filter:drop-shadow(0 12px 18px rgba(63,15,41,.25))}
+.hero-title span{position:relative;display:block;isolation:isolate;background:none;-webkit-text-fill-color:currentColor;animation:none;font-style:normal;-webkit-text-stroke:.022em currentColor}
+.hero-title span:before{content:attr(data-text);position:absolute;inset:0;z-index:-1;color:var(--gold);-webkit-text-stroke:.075em var(--gold);pointer-events:none}
+.hero-title .ht-areej{font-size:clamp(5.6rem,13vw,12rem);color:var(--mulberry)}
+.hero-title .ht-handmade{margin:-.12em 0 0 .9em;font-size:clamp(4.2rem,9.8vw,9rem);color:#8f2c57}
 @keyframes titleFloat{0%,100%{transform:translate3d(0,0,0) rotate(-.6deg)}25%{transform:translate3d(4px,-9px,0) rotate(.2deg)}50%{transform:translate3d(0,-15px,0) rotate(.7deg)}75%{transform:translate3d(-4px,-7px,0) rotate(.1deg)}}
-@media(prefers-reduced-motion:reduce){.hero-title img{animation:none}}
+@media(prefers-reduced-motion:reduce){.home-hero h1.hero-title{animation:none}}
 
 /* Header (2026-10-24): logo 30% smaller, everything else 10% bigger */
 .brand-logo:not(.footer-logo){height:87px;margin-block:-4px}
@@ -931,4 +936,9 @@ footer .brand-copy small{color:var(--gold)}
 .icon-btn .ico{width:24px;height:24px}
 .theme-toggle{width:44px;height:44px}
 .theme-toggle svg{width:20px;height:20px}
-@media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title img{width:min(92%,420px)}}
+@media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title .ht-areej{font-size:clamp(4.6rem,24vw,7rem)}.hero-title .ht-handmade{margin-left:.5em;font-size:clamp(3.4rem,16.5vw,5rem)}}
+/* Hero title colours: explicit, so older hero gradient rules cannot make the letters transparent */
+:root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.022em var(--ht-fill)}
+:root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#6e1f45}
+:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#8f2c57}
+:root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#c99d42;-webkit-text-fill-color:#c99d42;-webkit-text-stroke:.075em #c99d42;background:none}
