@@ -924,10 +924,10 @@ footer .brand-copy small{color:var(--gold)}
 .hero-title .ht-handmade{margin:.06em 0 0 .3em;font-size:clamp(2.8rem,6.4vw,5.9rem)}
 @keyframes titleFloat{0%,100%{transform:translate3d(0,0,0) rotate(-.6deg)}25%{transform:translate3d(4px,-9px,0) rotate(.2deg)}50%{transform:translate3d(0,-15px,0) rotate(.7deg)}75%{transform:translate3d(-4px,-7px,0) rotate(.1deg)}}
 /* Each word floats on its own, at a different pace and phase */
-.hero-title .ht-areej{animation:titleFloatA 7s ease-in-out infinite!important;will-change:transform}
-.hero-title .ht-handmade{animation:titleFloatB 9.5s ease-in-out -3.5s infinite!important;will-change:transform}
-@keyframes titleFloatA{0%,100%{transform:translate3d(0,0,0) rotate(-.5deg)}30%{transform:translate3d(4px,-10px,0) rotate(.2deg)}60%{transform:translate3d(0,-16px,0) rotate(.6deg)}80%{transform:translate3d(-3px,-6px,0) rotate(0deg)}}
-@keyframes titleFloatB{0%,100%{transform:translate3d(0,-8px,0) rotate(.5deg)}25%{transform:translate3d(-5px,2px,0) rotate(-.3deg)}55%{transform:translate3d(3px,10px,0) rotate(-.6deg)}80%{transform:translate3d(5px,0,0) rotate(.2deg)}}
+.hero-title .ht-areej{animation:titleFloatA 12s cubic-bezier(.45,0,.55,1) infinite alternate!important;will-change:transform}
+.hero-title .ht-handmade{animation:titleFloatB 16s cubic-bezier(.45,0,.55,1) -6s infinite alternate!important;will-change:transform}
+@keyframes titleFloatA{from{transform:translate3d(0,0,0) rotate(-.25deg)}to{transform:translate3d(2px,-7px,0) rotate(.25deg)}}
+@keyframes titleFloatB{from{transform:translate3d(-2px,-4px,0) rotate(.2deg)}to{transform:translate3d(2px,4px,0) rotate(-.2deg)}}
 @media(prefers-reduced-motion:reduce){.hero-title .ht-areej,.hero-title .ht-handmade{animation:none!important}}
 
 /* Header (2026-10-24): logo 30% smaller, everything else 10% bigger */
