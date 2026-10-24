@@ -173,7 +173,7 @@
 
   <section class="feedback-band" id="feedback">
     <div class="feedback-card">
-      <div class="feedback-copy"><small>Leave a review</small><h2 class="serif">Tell us how we did.</h2><p>Bought something, or just browsed? Leave a rating and a few words. Reviews are checked by Areej before they appear on the site.</p></div>
+      <div class="feedback-copy"><small>Leave a review</small><h2 class="serif">Tell us how we did.</h2><p>Bought something, or just browsed? Leave a rating and a few words. Your review appears on the site straight away.</p></div>
       <form class="feedback-form" id="feedbackForm" onsubmit="return sendFeedback(event)" novalidate>
         <label class="fb-field"><span>Your name</span><input id="fbName" name="name" type="text" maxlength="60" autocomplete="given-name" placeholder="First name is fine"></label>
         <fieldset class="fb-stars" aria-describedby="fbMsg"><legend>How many stars?</legend>
@@ -187,7 +187,7 @@
         </fieldset>
         <label class="fb-field"><span>Your review</span><textarea id="fbText" name="feedback" rows="4" maxlength="800" placeholder="What did you love? What could be better?"></textarea></label>
         <input class="fb-trap" id="fbTrap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="fb-actions"><button class="button button-light" id="fbSubmit" type="submit">Send review</button><small>Your review appears after Areej has approved it.</small></div>
+        <div class="fb-actions"><button class="button button-light" id="fbSubmit" type="submit">Send review</button><small>Your review appears on the site straight away.</small></div>
         <p class="fb-msg" id="fbMsg" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -286,7 +286,7 @@ const priceFor=(p,size)=>{const i=p.sizes.indexOf(size);return p.prices&&i>=0?p.
     function applyDiscount(){const code=$("discountInput").value.trim().toUpperCase();if(!code){activeCode="";$("discountMsg").textContent="Enter a code first.";return updateTotals()}if(!COUPONS[code]){$("discountMsg").textContent=activeCode?`That code is not valid. ${activeCode} is still applied.`:"That code is not valid.";return updateTotals()}const previous=activeCode;activeCode=code;updateTotals();if(previous&&previous!==code)$("discountMsg").textContent=`${code} replaced ${previous}. Only one code can be used per order.`}
     function checkoutWhatsApp(){if(!cart.length)return showToast("Your basket is empty.");const t=totals();let m="Hello Areej Handmade! 🌸\n\nI would like to order:\n\n";cart.forEach((x,i)=>{m+=`${i+1}. ${x.name}\nQuantity: ${x.qty}\nColour: ${x.colour}\nSize: ${x.size}\n${x.personal?`Personalisation: ${x.personal}\n`:""}${x.options?Object.entries(x.options).map(([key,value])=>`${key}: ${value}`).join("\n")+"\n":""}${x.privateMessage?`Private instructions: ${x.privateMessage}\n`:""}${x.giftMessage?`Gift-card message: ${x.giftMessage}\n`:""}Item total: ${money(x.price*x.qty)}\n\n`});m+=`Subtotal: ${money(t.subtotal)}\n${t.code?`Discount code: ${t.code}\n`:""}Discount: -${money(t.discount)}\nUK delivery: ${t.delivery?money(t.delivery):"FREE"}\nTotal: ${money(t.total)}\n\nPlease confirm availability and delivery details. Thank you!`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(m)}`,"_blank")}
     /* REVIEWS: stored in Supabase (table "reviews"). Fill in the project URL and the PUBLISHABLE (anon) key; the publishable key is safe to keep in the page.
-       New reviews are saved as approved=false and only show on the site after approval in Supabase. */
+       New reviews are saved as approved=true and show straight away; untick "approved" in Supabase to hide one. */
     const REVIEWS_CFG={url:"https://wnfchmkddbooqnuqipsd.supabase.co",key:"sb_publishable_VyJBkZLWcCAJJ046398-4A_h91b0xaW"};
     const reviewsOn=()=>!!(REVIEWS_CFG.url&&REVIEWS_CFG.key);
     const reviewsHeaders=extra=>Object.assign({apikey:REVIEWS_CFG.key,Authorization:"Bearer "+REVIEWS_CFG.key},extra||{});
@@ -314,7 +314,7 @@ const priceFor=(p,size)=>{const i=p.sizes.indexOf(size);return p.prices&&i>=0?p.
       try{const res=await fetch(`${REVIEWS_CFG.url}/rest/v1/reviews`,{method:"POST",headers:reviewsHeaders({"Content-Type":"application/json",Prefer:"return=minimal"}),body:JSON.stringify({name:name.slice(0,60),rating:Number(r.value),message:text.slice(0,800)})});
         if(!res.ok)throw new Error(res.status);
         try{localStorage.setItem("areejReviewAt",String(Date.now()))}catch(x){}
-        $("feedbackForm").reset();msg.classList.add("ok");msg.textContent="Thank you! Your review has been sent and will appear once Areej has approved it."}
+        $("feedbackForm").reset();msg.classList.add("ok");msg.textContent="Thank you! Your review is now on the site.";loadReviews()}
       catch(err){msg.textContent="Sorry, your review could not be sent. Please try again in a moment."}
       btn.disabled=false;return false}
     function openWhatsApp(){window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Areej Handmade! 🌸 I would like to ask about your products.")}`,"_blank")}
