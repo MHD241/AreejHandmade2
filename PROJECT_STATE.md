@@ -172,3 +172,10 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - SQL for the owner to run once: `docs/supabase-accounts.sql` (also set Site URL = https://areejhandmade.com in Supabase Auth settings).
 - Limits: member codes are checked in the browser only (like all codes); account button is on the home page only (product pages' headers unchanged; they share the same basket); tested only against a mock Supabase.
 - Next: owner runs SQL, then "push it" to publish.
+
+### Phase 19 update — separate account page (2026-10-24)
+- Accounts moved out of the pop-up into **account.html** (log in / create account / forgot + reset password; account centre with stats, Wishlist, Orders, Member codes, My details). Styles: `assets/account.css` (light + dark + mobile).
+- Shared logic is now `assets/account.js`, loaded by index.html and account.html. It also holds **REVIEWS_CFG (Supabase URL/key) and COUPONS (all discount codes)** — edit codes there now, not in index.html.
+- Wishlist items are stored as `{id,name,img,price}` (so the account page needs no product catalogue). The person icon on the home page opens account.html; "Your account" link added to every footer. `index.html?code=MEMBER10` opens the basket with that code applied.
+- Email confirmation / password-reset links go to account.html: in Supabase > Authentication > URL Configuration add `https://areejhandmade.com/account.html` to **Redirect URLs** (Site URL stays https://areejhandmade.com). Home page forwards stray login links to account.html.
+- Tested against a mock Supabase only (sign-up, log-in, hearts, order log, codes, name change, log-out; light/dark/mobile).
