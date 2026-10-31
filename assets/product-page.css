@@ -436,3 +436,14 @@ footer .brand-copy small{color:var(--gold)}
 .site-header{min-height:128px}
 .header-nav .nav-menu{min-height:128px}
 @media(max-width:760px){.brand-logo{height:88px}.site-header{min-height:92px}}
+
+/* Header (2026-10-24): logo 30% smaller, everything else 10% bigger */
+.brand-logo:not(.footer-logo){height:87px;margin-block:-4px}
+.site-header{min-height:96px}
+.round-button{min-height:46px;font-size:14.3px}
+.round-button b{min-width:21px;height:21px;font-size:11px}
+.theme-toggle{width:46px;height:46px}
+.theme-toggle svg{width:20px;height:20px}
+@media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.site-header{min-height:70px}}
+.header-nav{gap:31px}
+.header-nav>a,.header-nav .nav-trigger{font-size:14.3px}

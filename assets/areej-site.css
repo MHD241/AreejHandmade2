@@ -913,3 +913,119 @@ footer .brand-copy small{color:var(--gold)}
 :root .hero-stats li:before,:root[data-theme="dark"] .hero-stats li:before{color:var(--antique)}
 @media(max-width:760px){:root .home-hero:before,:root[data-theme="dark"] .home-hero:before{background-position:82% center}
 :root .home-hero:after,:root[data-theme="dark"] .home-hero:after{background:linear-gradient(180deg,rgba(250,240,230,.82) 0%,rgba(250,240,230,.55) 55%,rgba(250,240,230,.15) 100%)}}
+
+/* Hero title: real text in Alex Brush, the closest match to the logo lettering, with a gold outline and a gentle float (2026-10-24) */
+@font-face{font-family:"Alex Brush";src:url("fonts/alex-brush.woff") format("woff");font-weight:400;font-style:normal;font-display:swap}
+.home-hero h1.hero-title{display:block;margin:0 0 10px -6px;font-family:"Alex Brush","Snell Roundhand","Brush Script MT",cursive;font-weight:400;font-style:normal;line-height:.92;letter-spacing:0;color:var(--mulberry)}
+.home-hero h1.hero-title{filter:drop-shadow(0 8px 24px rgba(63,15,41,.12))}
+.hero-title span{position:relative;display:block;isolation:isolate;background:none;-webkit-text-fill-color:currentColor;animation:none;font-style:normal;-webkit-text-stroke:.022em currentColor}
+.hero-title span:before{content:attr(data-text);position:absolute;inset:0;z-index:-1;color:var(--gold);-webkit-text-stroke:.075em var(--gold);pointer-events:none}
+.hero-title .ht-areej{font-size:clamp(5.6rem,13vw,12rem);color:var(--mulberry)}
+.hero-title .ht-handmade{margin:.06em 0 0 .3em;font-size:clamp(2.8rem,6.4vw,5.9rem)}
+@keyframes titleFloat{0%,100%{transform:translate3d(0,0,0) rotate(-.6deg)}25%{transform:translate3d(4px,-9px,0) rotate(.2deg)}50%{transform:translate3d(0,-15px,0) rotate(.7deg)}75%{transform:translate3d(-4px,-7px,0) rotate(.1deg)}}
+/* Each word floats on its own, at a different pace and phase */
+.hero-title .ht-areej{animation:titleFloatA 10s cubic-bezier(.45,0,.55,1) infinite alternate!important;will-change:transform}
+.hero-title .ht-handmade{animation:titleFloatB 9s cubic-bezier(.45,0,.55,1) -4s infinite alternate!important;will-change:transform}
+@keyframes titleFloatA{from{transform:translate3d(-2px,4px,0)}to{transform:translate3d(2px,-5px,0)}}
+@keyframes titleFloatB{from{transform:translate3d(-3px,4px,0) rotate(.5deg)}to{transform:translate3d(4px,-5px,0) rotate(-.5deg)}}
+@media(prefers-reduced-motion:reduce){.hero-title .ht-areej,.hero-title .ht-handmade{animation:none!important}}
+
+/* Header (2026-10-24): logo 30% smaller, everything else 10% bigger */
+.brand-logo:not(.footer-logo){height:87px;margin-block:-4px}
+.nav-inner{min-height:96px!important}
+.nav-menu{min-height:96px}
+.nav-links{gap:29px}
+.nav-links>a,.nav-trigger{font-size:14.3px}
+.language-picker select{font-size:12.1px}
+.icon-btn{width:44px;height:44px}
+.icon-btn .ico{width:24px;height:24px}
+.theme-toggle{width:44px;height:44px}
+.theme-toggle svg{width:20px;height:20px}
+@media(max-width:760px){.brand-logo:not(.footer-logo){height:62px;margin-block:-3px}.nav-inner{min-height:70px!important}.hero-title .ht-areej{font-size:clamp(4.6rem,24vw,7rem)}.hero-title .ht-handmade{margin-left:.15em;font-size:clamp(2.6rem,11.8vw,3.7rem)}}
+/* Hero title colours: explicit, so older hero gradient rules cannot make the letters transparent */
+:root .home-hero h1.hero-title span,:root[data-theme="dark"] .home-hero h1.hero-title span{background:none;-webkit-background-clip:border-box;background-clip:border-box;animation:none;color:var(--ht-fill);-webkit-text-fill-color:var(--ht-fill);-webkit-text-stroke:.012em var(--ht-fill)}
+:root .home-hero h1.hero-title .ht-areej,:root[data-theme="dark"] .home-hero h1.hero-title .ht-areej{--ht-fill:#7a2b52}
+:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{--ht-fill:#7d3a59}
+:root .home-hero h1.hero-title span:before,:root[data-theme="dark"] .home-hero h1.hero-title span:before{color:#d2ae66;-webkit-text-fill-color:#d2ae66;-webkit-text-stroke:.039em #d2ae66;background:none}
+
+/* Trial (2026-10-24): script "Areej" + italic serif "Handmade." with the original pink-to-gold gradient */
+:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{font-family:var(--display),"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(2.8rem,6.1vw,5.4rem);margin:-.1em 0 0 -.33em;letter-spacing:-.01em;-webkit-text-stroke:0;color:transparent;-webkit-text-fill-color:transparent;background:linear-gradient(90deg,#7a2b52 0%,#a8576f 55%,#8a6a32 100%);-webkit-background-clip:text;background-clip:text}
+:root .home-hero h1.hero-title .ht-handmade:before,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade:before{display:none}
+@media(max-width:760px){:root .home-hero h1.hero-title .ht-handmade,:root[data-theme="dark"] .home-hero h1.hero-title .ht-handmade{font-size:clamp(2.5rem,10.5vw,3.4rem);margin-left:-.03em;margin-top:-.08em}}
+
+/* Feedback box (2026-10-24): name, star rating, feedback; sent to Areej on WhatsApp */
+.feedback-band{padding:clamp(40px,6vw,72px) var(--gutter,5%) clamp(56px,8vw,96px);background:var(--muslin)}
+.feedback-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start;max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,52px);border:1px solid var(--oat);border-radius:var(--r-lg,28px);background:linear-gradient(160deg,#fffaf4,#f6e9de)}
+.feedback-copy small{display:block;margin-bottom:14px;color:var(--antique);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.feedback-copy h2{font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.04;color:var(--damson)}
+.feedback-copy p{max-width:420px;margin-top:16px;color:var(--taupe)}
+.feedback-form{display:grid;gap:18px}
+.fb-field{display:grid;gap:8px;font-size:13px;font-weight:600;color:var(--ink)}
+.fb-field input,.fb-field textarea{width:100%;padding:13px 16px;border:1px solid var(--oat);border-radius:14px;background:rgba(255,255,255,.75);color:var(--ink);font:inherit;font-weight:400;transition:border-color .25s,box-shadow .25s}
+.fb-field textarea{resize:vertical;min-height:110px}
+.fb-field input:focus,.fb-field textarea:focus{border-color:var(--mulberry);outline:0;box-shadow:0 0 0 3px rgba(122,43,82,.14)}
+.fb-stars{margin:0;padding:0;border:0}
+.fb-stars legend{margin-bottom:6px;padding:0;font-size:13px;font-weight:600;color:var(--ink)}
+.fb-star-row{display:inline-flex;flex-direction:row-reverse;gap:4px}
+.fb-star-row input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.fb-star-row label{cursor:pointer;font-size:38px;line-height:1;color:#e2d3c4;transition:color .15s,transform .15s}
+.fb-star-row label:hover,.fb-star-row label:hover~label,.fb-star-row input:checked~label{color:var(--saffron,#f2c14e)}
+.fb-star-row label:hover{transform:scale(1.1)}
+.fb-star-row input:focus-visible+label{outline:2px solid var(--mulberry);outline-offset:3px;border-radius:6px}
+.fb-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.fb-actions small{color:var(--taupe);font-size:12px}
+.fb-msg{min-height:1.4em;font-size:13px;color:#9a2f4d}
+.fb-msg.ok{color:#2f6b3d}
+:root[data-theme="dark"] .feedback-band{background:var(--night,#1c1016)}
+:root[data-theme="dark"] .feedback-card{border-color:var(--line-gold,rgba(196,162,101,.28));background:linear-gradient(160deg,#2a1823,#1f1219)}
+:root[data-theme="dark"] .feedback-copy small{color:var(--gold)}
+:root[data-theme="dark"] .feedback-copy h2{color:var(--muslin)}
+:root[data-theme="dark"] .feedback-copy p,:root[data-theme="dark"] .fb-actions small{color:rgba(246,241,238,.72)}
+:root[data-theme="dark"] .fb-field,:root[data-theme="dark"] .fb-stars legend{color:var(--muslin)}
+:root[data-theme="dark"] .fb-field input,:root[data-theme="dark"] .fb-field textarea{border-color:var(--line-gold,rgba(196,162,101,.28));background:rgba(255,255,255,.06);color:var(--muslin)}
+:root[data-theme="dark"] .fb-star-row label{color:rgba(246,241,238,.22)}
+:root[data-theme="dark"] .fb-star-row label:hover,:root[data-theme="dark"] .fb-star-row label:hover~label,:root[data-theme="dark"] .fb-star-row input:checked~label{color:var(--saffron,#f2c14e)}
+:root[data-theme="dark"] .fb-msg{color:#ff9db3}:root[data-theme="dark"] .fb-msg.ok{color:#8fd19e}
+@media(max-width:860px){.feedback-card{grid-template-columns:1fr}}
+
+/* Reviews showcase (2026-10-24) */
+.reviews-band{padding:clamp(56px,8vw,100px) var(--gutter,5%) 0;background:var(--muslin)}
+.reviews-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:1180px;margin:0 auto 32px}
+.reviews-head small{display:block;margin-bottom:12px;color:var(--antique);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.reviews-head h2{font-size:clamp(2.2rem,4.2vw,3.8rem);line-height:1.04;color:var(--damson)}
+.reviews-summary{display:flex;align-items:center;gap:12px;color:var(--taupe);font-size:14px}
+.reviews-summary strong{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--damson)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;max-width:1180px;margin:0 auto}
+.review-card{display:flex;flex-direction:column;gap:12px;padding:24px;border:1px solid var(--oat);border-radius:20px;background:linear-gradient(160deg,#fffaf4,#f6e9de)}
+.review-card p{flex:1;color:var(--ink);font-size:15px;line-height:1.6;white-space:pre-line;overflow-wrap:anywhere}
+.review-card .rv-by{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-size:13px;color:var(--taupe)}
+.review-card .rv-by strong{color:var(--damson);font-weight:600}
+.rv-stars{color:var(--saffron,#f2c14e);font-size:18px;letter-spacing:2px;white-space:nowrap}
+.rv-stars i{font-style:normal;color:#e2d3c4}
+.reviews-empty{grid-column:1/-1;padding:28px;border:1px dashed var(--oat);border-radius:20px;color:var(--taupe);text-align:center}
+.fb-trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fb-actions .button:disabled{opacity:.55;cursor:not-allowed}
+:root[data-theme="dark"] .reviews-band{background:var(--night,#1c1016)}
+:root[data-theme="dark"] .reviews-head small{color:var(--gold)}
+:root[data-theme="dark"] .reviews-head h2,:root[data-theme="dark"] .reviews-summary strong{color:var(--muslin)}
+:root[data-theme="dark"] .reviews-summary{color:rgba(246,241,238,.72)}
+:root[data-theme="dark"] .review-card{border-color:var(--line-gold,rgba(196,162,101,.28));background:linear-gradient(160deg,#2a1823,#1f1219)}
+:root[data-theme="dark"] .review-card p{color:rgba(246,241,238,.9)}
+:root[data-theme="dark"] .review-card .rv-by{color:rgba(246,241,238,.6)}
+:root[data-theme="dark"] .review-card .rv-by strong{color:var(--muslin)}
+:root[data-theme="dark"] .rv-stars i{color:rgba(246,241,238,.2)}
+:root[data-theme="dark"] .reviews-empty{border-color:var(--line-gold,rgba(196,162,101,.28));color:rgba(246,241,238,.65)}
+
+/* ===== Accounts (home page bits; the account page has its own assets/account.css) ===== */
+.acct-dot{position:absolute;top:7px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--saffron);box-shadow:0 0 0 2px var(--muslin);display:none}
+#accountBtn{position:relative}#accountBtn.in .acct-dot{display:block}
+.fav-btn{position:absolute;top:12px;right:12px;z-index:3;display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:rgba(255,253,251,.88);color:var(--mulberry);cursor:pointer;backdrop-filter:blur(6px);transition:transform .25s var(--ease),background .25s}
+.fav-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;transition:fill .25s}
+.fav-btn:hover{transform:scale(1.08)}.fav-btn.on svg{fill:currentColor}
+.ac-link{padding:0;border:0;background:none;color:var(--mulberry);font:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cart-who,.fb-who{margin:0 0 10px;font-size:12.5px;color:var(--taupe);line-height:1.5}
+.fb-who{text-align:center;margin-top:8px}
+.cart-who strong,.fb-who strong{color:var(--mulberry)}
+:root[data-theme="dark"] .ac-link,:root[data-theme="dark"] .cart-who strong,:root[data-theme="dark"] .fb-who strong{color:var(--rose)}
+:root[data-theme="dark"] .fav-btn{background:rgba(28,16,22,.82);color:var(--rose);border-color:var(--line-gold,rgba(196,162,101,.28))}
+:root[data-theme="dark"] .acct-dot{box-shadow:0 0 0 2px var(--night)}
