@@ -179,3 +179,8 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - Wishlist items are stored as `{id,name,img,price}` (so the account page needs no product catalogue). The person icon on the home page opens account.html; "Your account" link added to every footer. `index.html?code=MEMBER10` opens the basket with that code applied.
 - Email confirmation / password-reset links go to account.html: in Supabase > Authentication > URL Configuration add `https://areejhandmade.com/account.html` to **Redirect URLs** (Site URL stays https://areejhandmade.com). Home page forwards stray login links to account.html.
 - Tested against a mock Supabase only (sign-up, log-in, hearts, order log, codes, name change, log-out; light/dark/mobile).
+
+### Merged to main — 2026-10-31
+- PR #6 (discount codes, header sizing, hero title, reviews, accounts + account.html) merged and live on areejhandmade.com once GitHub Pages rebuilds.
+- Open: verify on the live site (1) create account + log in, (2) submit a review, (3) heart a product and see it in the account wishlist, (4) member code MEMBER10 in the basket. Add https://areejhandmade.com/account.html to Supabase Redirect URLs.
+- Open question: merge Nursery Rainbow Hoop (h7) into New Baby Birth Hoop (h6)?
