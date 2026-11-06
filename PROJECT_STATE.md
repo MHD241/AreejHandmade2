@@ -184,3 +184,6 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - PR #6 (discount codes, header sizing, hero title, reviews, accounts + account.html) merged and live on areejhandmade.com once GitHub Pages rebuilds.
 - Open: verify on the live site (1) create account + log in, (2) submit a review, (3) heart a product and see it in the account wishlist, (4) member code MEMBER10 in the basket. Add https://areejhandmade.com/account.html to Supabase Redirect URLs.
 - Open question: merge Nursery Rainbow Hoop (h7) into New Baby Birth Hoop (h6)?
+
+### 2026-11-06
+- Hero intro paragraph narrowed to 350px (owner artifact comment); merged to main.
