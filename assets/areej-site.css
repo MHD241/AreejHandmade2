@@ -1029,3 +1029,7 @@ footer .brand-copy small{color:var(--gold)}
 :root[data-theme="dark"] .ac-link,:root[data-theme="dark"] .cart-who strong,:root[data-theme="dark"] .fb-who strong{color:var(--rose)}
 :root[data-theme="dark"] .fav-btn{background:rgba(28,16,22,.82);color:var(--rose);border-color:var(--line-gold,rgba(196,162,101,.28))}
 :root[data-theme="dark"] .acct-dot{box-shadow:0 0 0 2px var(--night)}
+
+/* Hero intro paragraph: narrower line length (owner comment 2026-11-06) */
+.home-hero p{max-width:350px;text-wrap:balance}
+@media(max-width:700px){.home-hero p{max-width:300px}}
