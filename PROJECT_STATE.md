@@ -196,3 +196,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - Listed **first** in both `collections.gifts` and `collections.palestine` in index.html (same object in both; `allProducts()` now de-duplicates by id). Product page breadcrumb = Palestinian pieces.
 - Assumptions to confirm with owner: price £70, actual size in cm, "hand-stitched / tatreez-inspired / cord edge" wording.
 - Open: the home-page Gifts tile still says "Coming soon – gift sets are on the way"; the product card crops the tall photo to a square (a square version of the photo would show the whole map); header "Palestinian" dropdown has no entry for the new piece yet.
+
+### Merged to main — 2026-11-07
+- PRs #8 (hero redesign), #9 (Dome of the Rock Hoop £65/£85), #10 (Tatreez Palestine Map £70) merged.
+- Open: confirm hoop sizes/colours for h21, size in cm and wording for p3; Gifts "coming soon" tile on home; Palestinian nav dropdown entry for p3; square photo for the p3 card.
