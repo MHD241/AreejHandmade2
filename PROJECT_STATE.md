@@ -187,3 +187,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 
 ### 2026-11-06
 - Hero intro paragraph narrowed to 350px (owner artifact comment); merged to main.
+
+### Phase 20 — Dome of the Rock Hoop (2026-11-07, branch add-dome-hoop)
+- New product **h21 "Dome of the Rock Hoop"** (hoops collection, type heritage, badge "Heritage"): `products/h21.html` (cloned from h13), photo `assets/photos/dome-of-the-rock-hoop.jpg`, entry added after h13 in `collections.hoops` in index.html.
+- Price **£78 (20 cm) / £98 (25 cm)**, personalisable (Arabic word/name/verse; photo shows "عائدون"). Reasoning: dearer than Arabic Calligraphy Hoop (£65/£85), cheaper than Palestine Map Floral (£95/£120) and UK made-to-order 6" hoops (~£145); well above simple hoops (£18–£30). Sizes/colour options are my assumption — owner to confirm real hoop size and colourways.
