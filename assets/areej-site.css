@@ -1033,3 +1033,41 @@ footer .brand-copy small{color:var(--gold)}
 /* Hero intro paragraph: narrower line length (owner comment 2026-11-06) */
 .home-hero p{max-width:350px;text-wrap:balance}
 @media(max-width:700px){.home-hero p{max-width:300px}}
+
+/* ===== Hero redesign: matches the owner's final hero picture (2026-11-07). Clean photo + real text. ===== */
+html:root:root:root .home-hero{align-items:center;background:#f7e6df}
+html:root:root:root .home-hero:before{background:url("photos/hero-final-scene.jpg") 82% center/cover no-repeat}
+html:root:root:root .home-hero:after{background:linear-gradient(90deg,rgba(255,244,240,.38) 0%,rgba(255,244,240,.12) 40%,rgba(255,244,240,0) 58%)}
+html:root:root:root .home-hero .hero-copy{max-width:560px;text-align:center;margin-left:clamp(0px,2vw,36px)}
+html:root:root:root .home-hero .hero-eyebrow{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:6px;color:#4a1a35}
+html:root:root:root .home-hero .hero-eyebrow:before{display:none}
+html:root:root:root .home-hero .hero-eyebrow em{font-style:normal;font-size:13.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#4a1a35}
+.hero-flourish{display:block;width:min(400px,86%);height:auto;overflow:visible}
+.hero-title-wrap{position:relative;display:inline-block;margin:0 auto}
+.hero-needle{position:absolute;z-index:0;right:-18%;top:-8%;width:34%;height:auto;pointer-events:none;filter:drop-shadow(0 4px 10px rgba(201,164,92,.25))}
+html:root:root:root .home-hero h1.hero-title{margin:0;text-align:center}
+html:root:root:root .home-hero h1.hero-title .ht-handmade{margin:-.12em 0 0 0;font-size:clamp(3rem,6.4vw,5.6rem)}
+.hero-flourish.hf-bot{margin:2px auto 0;width:min(340px,70%)}
+html:root:root:root .home-hero p{max-width:470px;margin:18px auto 26px;font-family:var(--display),"Cormorant Garamond",Georgia,serif;font-size:clamp(1.15rem,1.55vw,1.38rem);line-height:1.5;color:#3d1a2c;text-wrap:balance}
+html:root:root:root .home-hero .hero-actions{justify-content:center;gap:16px}
+html:root:root:root .home-hero .apple-pill{padding:0 30px;min-height:52px;box-shadow:0 0 0 2px rgba(201,164,92,.55),0 8px 20px rgba(122,43,82,.22);font-size:15.5px}
+.hero-cart{width:20px;height:20px}
+html:root:root:root .home-hero .apple-link{padding:0 26px;min-height:52px;border:1.5px solid rgba(201,120,150,.7);border-radius:999px;background:rgba(255,255,255,.28);backdrop-filter:blur(3px);color:#4a1a35;font-size:15px}
+html:root:root:root .home-hero .apple-link:hover{background:rgba(255,255,255,.55)}
+html:root:root:root .home-hero .hero-studio-link{margin-left:auto;margin-right:auto}
+@media(max-width:900px){
+  html:root:root:root .home-hero:before{background-position:88% center}
+  html:root:root:root .home-hero:after{background:linear-gradient(180deg,rgba(255,244,240,.9) 0%,rgba(255,244,240,.78) 60%,rgba(255,244,240,.45) 100%)}
+  .hero-needle{right:-10%;width:30%}
+  html:root:root:root .home-hero .hero-copy{margin-left:0}
+}
+@media(max-width:520px){
+  html:root:root:root .home-hero h1.hero-title .ht-handmade{font-size:clamp(2.7rem,12vw,3.6rem)}
+  .hero-needle{right:-4%;top:-14%;width:27%}
+  html:root:root:root .home-hero .apple-pill,html:root:root:root .home-hero .apple-link{padding:0 20px;min-height:48px;font-size:14px}
+}
+.hero-needle{right:-27%;top:-30%;width:46%}
+html:root:root:root .home-hero p{text-shadow:0 0 14px rgba(255,244,240,.95),0 0 4px rgba(255,244,240,.9)}
+@media(max-width:900px){.hero-needle{right:-14%;top:-24%;width:38%}}
+@media(max-width:520px){.hero-needle{right:-6%;top:-26%;width:32%}}
+@media(max-width:520px){.hero-needle{right:-2%;top:-10%;width:26%}}
