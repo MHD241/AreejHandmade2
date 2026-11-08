@@ -214,3 +214,6 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 ### Peace Hand Keyring (g4), on branch add-leather-keyring (not pushed)
 - products/g4.html: one product, £9, Gifts, colours Green / Red / Black; picking a colour swaps the main photo (and basket image) to that colour. Photos: assets/photos/peace-keyring-{green,red,black}.jpg.
 - Open: confirm price; Gifts card shows the green photo only.
+
+### Merged to main
+- PR #11 merged: g1, g2 (map keyrings), g3 (tally counter), g4 (peace hand keyring) are live in Gifts.
