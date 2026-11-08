@@ -200,3 +200,8 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 ### Merged to main — 2026-11-07
 - PRs #8 (hero redesign), #9 (Dome of the Rock Hoop £65/£85), #10 (Tatreez Palestine Map £70) merged.
 - Open: confirm hoop sizes/colours for h21, size in cm and wording for p3; Gifts "coming soon" tile on home; Palestinian nav dropdown entry for p3; square photo for the p3 card.
+
+### Phase 22 — Palestine Map Keyring (2026-11-08, branch add-leather-keyring)
+- New product **g1 "Palestine Map Keyring"**, **£9 fixed price** (no size/colour choices), in `collections.gifts` (2nd, after the Tatreez map). `products/g1.html` (cloned from p3, 2-photo gallery), photos `assets/photos/palestine-map-keyring.jpg` and `-door.jpg`.
+- Price research: similar Palestine-map leather keychains ≈ €12 (Kufiya.org), $14 (Arab American Museum), $18 embroidered (Rajaeen), UK handmade leather keyring from £14 (Holly.co). Owner suggested ~£6; set £9 as a compromise — owner can lower.
+- Assumption: material described as "stitched edges, gold-tone clasp, twine bow" (not claiming real leather in the copy). Owner to confirm material and size.
