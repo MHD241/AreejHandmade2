@@ -210,3 +210,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 ### Tally Counter (g3), added on branch add-leather-keyring (not pushed)
 - products/g3.html: finger tally counter, £5 suggested, Gifts. Six colours as single-choice chips: Olive green, Lime green, Purple, Black, Red, Blue. Three photos (olive, all colours, in hand).
 - Open: confirm price (£5) and whether stock photos match real stock; Gifts card shows olive photo for every colour.
+
+### Peace Hand Keyring (g4), on branch add-leather-keyring (not pushed)
+- products/g4.html: one product, £9, Gifts, colours Green / Red / Black; picking a colour swaps the main photo (and basket image) to that colour. Photos: assets/photos/peace-keyring-{green,red,black}.jpg.
+- Open: confirm price; Gifts card shows the green photo only.
