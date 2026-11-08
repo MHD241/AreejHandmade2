@@ -206,3 +206,7 @@ Preview: https://claude.ai/artifact/5xeHSadRdFuzHrmQhjvQte (version 3 = full red
 - Price research: similar Palestine-map leather keychains ≈ €12 (Kufiya.org), $14 (Arab American Museum), $18 embroidered (Rajaeen), UK handmade leather keyring from £14 (Holly.co). Owner suggested ~£6; set £9 as a compromise — owner can lower.
 - Assumption: material described as "stitched edges, gold-tone clasp, twine bow" (not claiming real leather in the copy). Owner to confirm material and size.
 - **g2 "Floral Palestine Map Keyring"** added (same branch): £9 fixed price, pink with floral fabric inlay, gold-tone clasp. `products/g2.html`, photos `assets/photos/floral-map-keyring.jpg` and `floral-map-keyring-bag.jpg`; 3rd supplied photo (diamond-shaped, not a map) deliberately not used. Listed 3rd in Gifts.
+
+### Tally Counter (g3), added on branch add-leather-keyring (not pushed)
+- products/g3.html: finger tally counter, £5 suggested, Gifts. Six colours as single-choice chips: Olive green, Lime green, Purple, Black, Red, Blue. Three photos (olive, all colours, in hand).
+- Open: confirm price (£5) and whether stock photos match real stock; Gifts card shows olive photo for every colour.
